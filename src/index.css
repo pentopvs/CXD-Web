@@ -359,3 +359,13 @@ input:checked + .slider:before {
 .bg-offwhite {
   background-color: #f1f7fa;
 }
+
+/* Home carousel */
+@media screen 
+  and (min-width: 1624px)
+{
+    .carousel-div{
+      height: 100vh !important;
+    }
+}
+

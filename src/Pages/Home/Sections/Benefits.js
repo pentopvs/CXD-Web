@@ -49,7 +49,7 @@ export default () => {
           <BenefitsCard
             img={Achieveexperienceexcellence}
             title="Achieve experience excellence"
-            text="Create As-Is and To-Be journey map, identify improvement ideas and execute those ideas."
+            text="Create As-Is and To-Be journey maps, identify improvement ideas and execute those ideas."
           />
         </div>
         <div className="col-12 col-md-4">
@@ -73,7 +73,7 @@ export default () => {
           <BenefitsCard
             img={Seethebigpicture}
             title="See the big picture"
-            text="Develop a clear vision of the future by mapping end-to-end of a journey."
+            text="Develop a clear vision of the future by mapping the end-to-end customer journey."
           />
         </div>
         <div className="col-12 col-md-4">

@@ -6,6 +6,8 @@ import Startup from "../assets/Pricing/startup.svg";
 import Growth from "../assets/Pricing/growth.svg";
 import Enterprise from "../assets/Pricing/enterprise.svg";
 import { Link } from "react-router-dom";
+import MetaTags from 'react-meta-tags';
+import Logo from '../assets/Home/logo.png';
 
 // const Collapse = ({ question, answer, id }) => (
 //   <div className="accordion" id="accordionExample">
@@ -40,15 +42,19 @@ export default () => {
   useEffect(() => {
     $("#toggle").click();
   });
-  document.title =
-    "User Journey Map | Service Blueprint | Forever Free | CXDeployer";
-
   return (
     <section
       className="Pricing"
       id="pricinghome"
       style={{ color: isYearly ? "col1" : "col2" }}
     >
+              <MetaTags>
+            <title>User Journey Map | Service Blueprint | Forever Free | CXDeployer</title>
+            <meta name="description" content="Lifetime free. Affordable pricing for individuals, small and large organizations" />
+            <meta property="og:title" content="User Journey Map | Service Blueprint | Forever Free | CXDeployer" />
+            <meta property="og:image" content={Logo} />
+          </MetaTags>
+
       <div className="container mt-5">
         <div className="h3  pricing-lead-fourth text-center">
           <font color=" #999999">CXDeployer</font>

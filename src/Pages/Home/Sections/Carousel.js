@@ -12,6 +12,8 @@ import Slider2 from "../../../assets/Home/slider2.jpg";
 import Slider3 from "../../../assets/Home/slider3.png";
 import Slider4 from "../../../assets/Home/slider4.png";
 
+import { Grid } from "@material-ui/core";
+import '../../../index.css';
 // Gradient
 // #0a1d44 top
 // #3360d9
@@ -40,55 +42,65 @@ export default () => {
         <div
           className="carousel-item rounded active"
           style={{
-            minHeight :"88vh",
+            minHeight: "88vh",
             height: "auto",
           }}
         >
           <div className="d-flex align-items-center h-100">
-            <div className="row ">
-              <div className="col-12 d-md-none justify-content-center">
-                <img
-                  src={Banner1Sm}
-                  alt=""
-                  width="100%"
-                  style={{ minHeight: "10px", height: 350 }}
-                  className="img-fluid"
-                />
-              </div>
-              <div className="col-12 col-md-6">
-                <div className="intro-text p-md-5">
-                  <div className="intro-lead-in text-uppercase ">
-                    <font style={{ fontFamily: "arial" }}>
-                      <strong>
-                        Transform your customer <br /> experience{" "}
-                      </strong>
-                    </font>
+            <Grid
+              container
+              direction="col"
+              justify="center"
+              alignItems="center"
+              className="carousel-div"
+            >
+              <Grid item>
+                <div className="row ">
+                  <div className="col-12 d-md-none justify-content-center">
+                    <img
+                      src={Banner1Sm}
+                      alt=""
+                      width="100%"
+                      style={{ minHeight: "10px", height: 350 }}
+                      className="img-fluid"
+                    />
                   </div>
-                  <div className="intro-desc">
-                    <font style={{ fontFamily: "Arial" }}>
-                      The design thinking platform for you and your team for
-                      designing personas and business models, mapping customer
-                      journeys, experience innovation and execution management
-                      to improve customer experience.
-                    </font>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <a
-                      rel="noopener noreferrer"
-                      href="https://app.cxdeployer.com/#/"
-                      target="_blank"
-                      className="btn btn-first"
-                      style={{ zIndex: "100", align: "left", width: "10" }}
-                    >
-                      <font color="white">Try for free</font>
-                    </a>
-                    <p>
-                      <small>No Credit Card Required!</small>
-                    </p>
+                  <div className="col-12 col-md-6">
+                    <div className="intro-text p-md-5">
+                      <div className="intro-lead-in text-uppercase ">
+                        <font style={{ fontFamily: "arial" }}>
+                          <strong>
+                            Transform your customer <br /> experience{" "}
+                          </strong>
+                        </font>
+                      </div>
+                      <div className="intro-desc">
+                        <font style={{ fontFamily: "Arial" }}>
+                          The design thinking platform for you and your team for
+                          designing personas and business models, mapping
+                          customer journeys, experience innovation and execution
+                          management to improve customer experience.
+                        </font>
+                      </div>
+                      <div style={{ textAlign: "center" }}>
+                        <a
+                          rel="noopener noreferrer"
+                          href="https://app.cxdeployer.com/#/"
+                          target="_blank"
+                          className="btn btn-first"
+                          style={{ zIndex: "100", align: "left", width: "10" }}
+                        >
+                          <font color="white">Try for free</font>
+                        </a>
+                        <p>
+                          <small>No Credit Card Required!</small>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </div>
         </div>
         <div
@@ -100,6 +112,15 @@ export default () => {
           }}
         >
           <div className="d-flex align-items-center h-100">
+          <Grid
+              container
+              direction="col"
+              justify="center"
+              alignItems="center"
+              className="carousel-div"
+            >
+              <Grid item>
+
             <div className="row ">
               <div className="col-12 d-md-none">
                 <img
@@ -122,7 +143,7 @@ export default () => {
                     <font style={{ fontFamily: "Arial" }}>
                       The simplest tool to capture the current experience along
                       with collaborating and sharing feedback with the team in
-                      real time for mapping persona, empathy and customer
+                      real-time for mapping persona, empathy and customer
                       journey.
                     </font>
                   </div>
@@ -143,6 +164,8 @@ export default () => {
                 </div>
               </div>
             </div>
+            </Grid>
+            </Grid>
           </div>
         </div>
         <div
@@ -153,6 +176,15 @@ export default () => {
           }}
         >
           <div className="d-flex align-items-center h-100">
+          <Grid
+              container
+              direction="col"
+              justify="center"
+              alignItems="center"
+              className="carousel-div"
+            >
+              <Grid item>
+
             <div className="row ">
               <div className="col-12 d-md-none">
                 <img
@@ -194,16 +226,27 @@ export default () => {
                 </div>
               </div>
             </div>
+            </Grid>
+            </Grid>
           </div>
         </div>
         <div
           className="carousel-item fourth rounded"
           style={{
             height: "auto",
-            minHeight : "88vh"
+            minHeight: "88vh",
           }}
         >
           <div className="d-flex align-items-center h-100">
+          <Grid
+              container
+              direction="col"
+              justify="center"
+              alignItems="center"
+              className="carousel-div"
+            >
+              <Grid item>
+
             <div className="row ">
               <div className="col-12 d-md-none">
                 <img
@@ -245,6 +288,8 @@ export default () => {
                 </div>
               </div>
             </div>
+            </Grid>
+            </Grid>
           </div>
         </div>
       </div>

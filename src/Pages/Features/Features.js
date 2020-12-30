@@ -6,12 +6,21 @@ import Img3 from "../../assets/Features/Business-model-canvas.png";
 import Img4 from "../../assets/Features/CUstomer-journey-map.png";
 import Img5 from "../../assets/Features/Edit-Idea.png";
 import Img6 from "../../assets/Features/Post-new-idea.png";
+import Logo from "../../assets/Home/logo.png";
+import MetaTags from 'react-meta-tags';
+
 
 export default () => {
-  document.title =
-    "Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer";
   return (
     <div className=" pt-5 bg-features">
+         <div className="wrapper">
+          <MetaTags>
+            <title>Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
+            <meta name="description" content="Manage CX transformation program and achieve customer experience excellence." />
+            <meta property="og:title" content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="og:image" content={Logo} />
+          </MetaTags>
+        </div>
       <div className="intro-text text-center py-md-5 mb-5 p-5">
         <div className="intro-desc mb-0">
           <h5>
@@ -24,10 +33,10 @@ export default () => {
           </h1>
         </div>
         <div className="intro-desc mt-5 lead mt-0">
-          The best integrated experience management and design thinking tool
+          The best-integrated experience management and design thinking tool
           with all features to design personas, empathy mapping, journey
           mapping, business model canvas, capture ideas to improve the current
-          experience and manage implementation of the best idea to realize the
+          experience and manage the implementation of the best idea to realize the
           future experience.
         </div>
         <div className="w-100 d-flex justify-content-center">
@@ -148,7 +157,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Intuitive platform with zero leaning curve</h5>
+              <h5>Intuitive platform with zero learning curve</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -176,7 +185,7 @@ export default () => {
       <div className="features-section bg-offwhite p-5">
         <h3 className="text-center text-black">Business Model Canvas</h3>
         <h2 className="text-center text-black my-3">
-          Design and analyze solution’s value proposition
+          Design and analyze the solution’s value proposition
         </h2>
         <div className="row">
           <div className="col-12 col-md-6 mt-5 order-2 order-sm-1 p-5">
@@ -208,7 +217,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Real time collaboration</h5>
+              <h5>Real-time collaboration</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -239,7 +248,7 @@ export default () => {
       <div className="features-section p-5">
         <h3 className="text-center ">Customer Journey Map</h3>
         <h2 className="text-center my-3">
-          Visualize your customer’s experience and create professional looking
+          Visualize your customer’s experience and create a professional looking
           journey map{" "}
         </h2>
         <div className="row">
@@ -265,7 +274,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Export to PDF, PNG and SVG</h5>
+              <h5>Export to PNG</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -384,7 +393,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Select from a ranges of improvement methodologies</h5>
+              <h5>Select from a range of improvement methodologies</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -394,7 +403,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Pre-build tasks to get you started</h5>
+              <h5>Pre-built tasks to get you started</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -404,7 +413,7 @@ export default () => {
                 width="40"
                 height="40"
               />
-              <h5>Set deadline to complete</h5>
+              <h5>Set the deadline to complete</h5>
             </div>
             <div className="d-flex align-items-center mb-5">
               <img
@@ -415,7 +424,7 @@ export default () => {
                 height="40"
               />
               <h5>
-                Drag and drop task as it progresses to easily change status
+                Drag and drop task as it progresses to easily change the status
               </h5>
             </div>
           </div>

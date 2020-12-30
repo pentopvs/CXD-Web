@@ -134,7 +134,7 @@
   color: #dc3545 !important;
 }
 
-@media (min-width: 500px) {
+/* @media (min-width: 500px) {
   .carousel-item {
     background-image: url("../../assets/Home/CX-deployer-banner-9.png");
   }
@@ -144,7 +144,7 @@
   .fourth {
     background-image: url("../../assets/Home/CX-deployer-banner-4-sm.png");
   }
-}
+} */
 
 .carousel-control-prev {
   width: 10%;
@@ -198,7 +198,6 @@
 }
 .carousel-item {
   position: relative;
-
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
