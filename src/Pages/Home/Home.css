@@ -1,0 +1,234 @@
+.benefits-card:hover {
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+}
+.benefits-card .card-body {
+  margin-top: 1em;
+}
+.card-body .card-title {
+  font-size: 1.25em;
+}
+.benefits-card .card-text {
+  font-weight: 400;
+  margin-bottom: 2em;
+}
+
+.bgS {
+  background-color: #f2f4f5;
+}
+
+.cxd {
+  font-size: 5rem;
+}
+
+@media (max-width: 800px) {
+  .cxd {
+    font-size: 4rem;
+  }
+}
+
+.benefits-card .card-body {
+  height: 15rem;
+}
+
+.benefits-card img {
+  height: 10em;
+}
+
+.nav-pills .nav-link,
+.nav-pills .active {
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1em;
+  margin-top: 1em;
+  background-color: #f8f8f8 !important;
+  color: #212529 !important;
+  cursor: pointer;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.banner {
+  opacity: 0.8;
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#v-pills-1:hover {
+  border-left: 4px solid #aeefec;
+}
+#v-pills-2:hover {
+  border-left: 4px solid #f8fab8;
+}
+#v-pills-3:hover {
+  border-left: 4px solid #d8ebb5;
+}
+#v-pills-4:hover {
+  border-left: 4px solid #deddfa;
+}
+#v-pills-5:hover {
+  border-left: 4px solid #f3d4d4;
+}
+
+#v-pills-1.active {
+  border-left: 8px solid #aeefec;
+}
+#v-pills-2.active {
+  border-left: 8px solid #f8fab8;
+}
+#v-pills-3.active {
+  border-left: 8px solid #d8ebb5;
+}
+#v-pills-4.active {
+  border-left: 8px solid #deddfa;
+}
+#v-pills-5.active {
+  border-left: 8px solid #f3d4d4;
+}
+
+.v-pills-bg-1 {
+  background-color: #aeefec;
+}
+.v-pills-bg-2 {
+  background-color: #f8fab8;
+}
+.v-pills-bg-3 {
+  background-color: #d8ebb5;
+}
+.v-pills-bg-4 {
+  background-color: #deddfa;
+}
+.v-pills-bg-5 {
+  background-color: #f3d4d4;
+}
+
+.overview-image {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.key-feature-image {
+  max-height: 20rem;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.key-feature-image-container {
+  min-height: 23rem !important;
+  justify-content: center !important;
+}
+
+.features-container {
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+}
+.fa-check-circle {
+  color: #28a745;
+}
+.fa-times-circle {
+  color: #dc3545 !important;
+}
+
+@media (min-width: 500px) {
+  .carousel-item {
+    background-image: url("../../assets/Home/CX-deployer-banner-9.png");
+  }
+  .third {
+    background-image: url("../../assets/Home/CX-deployer-banner-1-sm.png");
+  }
+  .fourth {
+    background-image: url("../../assets/Home/CX-deployer-banner-4-sm.png");
+  }
+}
+
+.carousel-control-prev {
+  width: 10%;
+}
+
+.carousel-indicators li {
+  background-color: rgba(0, 0, 0, 0.418);
+}
+.carousel-indicators .active {
+  background-color: blue;
+}
+
+.carousal-text {
+  text-decoration-color: blue;
+}
+
+.carousel-img-text {
+  text-align: center;
+  margin: 0.6em auto;
+  font-size: 1.4rem;
+  color: #000;
+  text-shadow: horizontal-offset vertical-offset blur color;
+  text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
+}
+
+.bg-gradient {
+  background-image: #fff;
+}
+.step {
+  padding: 8px;
+  border-bottom: 8px solid #bdcdea;
+  width: 150px;
+  margin-bottom: 20px;
+  color: grey;
+}
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.pricing img.card-img-top {
+  height: 150px;
+}
+.carousel-item {
+  position: relative;
+
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.carousel-item .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .carousel-item {
+    background: none;
+    padding: 0 10px;
+    height: auto !important;
+  }
+  .logo-content {
+    text-align: center;
+    width: 100% !important;
+  }
+}
+a:hover {
+  text-decoration: none !important;
+}
+.step-desc {
+  font-size: 18px;
+}
+
+.step-text {
+  font-size: 60px;
+}
