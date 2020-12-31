@@ -48,7 +48,7 @@ export default function HomeBlogCard({ blog }) {
           <img
             className="img-fluid  rounded-lg"
             alt="blog-image"
-            src={`https://cxdeployer.com/${blog.titleImage}`}
+            src={`https://app.cxdeployer.com/user/${blog.titleImage}`}
           />
         </Grid>
         <Grid item xs={12} className={`${classes.blogDate} mt-4 mb-2 mx-3`}>
