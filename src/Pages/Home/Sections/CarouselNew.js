@@ -52,9 +52,9 @@ export default () => {
             <Grid item sm={12} lg={6} className="d-lg-none text-center">
               <img src={Banner1Sm} alt="" style={{width:'100%'}} className="img-fluid mx-auto" />
             </Grid>
-            <Grid item md={12} lg={5}>
+            <Grid item md={12} lg={4}>
               <div className="intro-text p-md-5">
-                <div className="intro-lead-in text-uppercase ">
+                <div className="intro-lead-in ">
                   <font style={{ fontFamily: "arial" }}>
                     <strong>
                       Transform your customer <br /> experience{" "}
@@ -80,7 +80,7 @@ export default () => {
                     <font color="white">Try for free</font>
                   </a>
                   <p>
-                    <small>No Credit Card Required!</small>
+                    <small className="text-white">No Credit Card Required!</small>
                   </p>
                 </div>
               </div>
@@ -91,13 +91,13 @@ export default () => {
               direction="row"
               justify="center"
               alignItems="center"
-              lg={7}
+              lg={8}
               className="d-none d-lg-block text-center" 
             >
               <img
                 src={Banner1Sm}
                 alt=""
-                style={{minWidth:'400px',width:'600px'}}
+                style={{minWidth:'400px',width:'100%'}}
                 className="img-fluid mx-auto"
               />
             </Grid>
@@ -124,9 +124,9 @@ export default () => {
               />
             </Grid>
 
-            <Grid item md={12} lg={5}>
+            <Grid item md={12} lg={4}>
               <div className="intro-text p-md-5">
-                <div className="intro-lead-in text-uppercase ">
+                <div className="intro-lead-in ">
                   <font style={{ fontFamily: "arial" }}>
                     <strong>Collaborate and map the current experience</strong>
                   </font>
@@ -149,7 +149,7 @@ export default () => {
                     <font color="white">Try for free</font>
                   </a>
                   <p>
-                    <small>No Credit Card Required!</small>
+                    <small className="text-white">No Credit Card Required!</small>
                   </p>
                 </div>
               </div>
@@ -160,13 +160,13 @@ export default () => {
               direction="row"
               justify="center"
               alignItems="center"
-              lg={7}
+              lg={8}
               className="d-none d-lg-block text-center"
             >
               <img
                 src={Banner2Sm}
                 alt=""
-                style={{width:'600px'}}
+                style={{width:'100%'}}
                 className="img-fluid mx-auto"
               />
             </Grid>
@@ -193,9 +193,9 @@ export default () => {
               />
             </Grid>
 
-            <Grid item md={12} lg={5}>
+            <Grid item md={12} lg={4}>
               <div className="intro-text p-md-5">
-                <div className="intro-lead-in text-uppercase ">
+                <div className="intro-lead-in ">
                   <font style={{ fontFamily: "arial" }}>
                     <strong>Capture ideas to improve experience</strong>
                   </font>
@@ -218,7 +218,7 @@ export default () => {
                     <font color="white">Try for free</font>
                   </a>
                   <p>
-                    <small>No Credit Card Required!</small>
+                    <small className="text-white">No Credit Card Required!</small>
                   </p>
                 </div>
               </div>
@@ -229,11 +229,11 @@ export default () => {
               direction="row"
               justify="center"
               alignItems="center"
-              lg={7}
+              lg={8}
               className="d-none d-lg-block text-center"
             >
               <img src={Banner3Sm} alt="" 
-                                style={{minWidth:'400px',width:'600px'}}
+                                style={{minWidth:'400px',width:'100%'}}
                 className="img-fluid mx-auto"
 
               />
@@ -262,9 +262,9 @@ export default () => {
               />
             </Grid>
 
-            <Grid item md={12} lg={5}>
+            <Grid item md={12} lg={4}>
               <div className="intro-text p-md-5">
-                <div className="intro-lead-in text-uppercase ">
+                <div className="intro-lead-in ">
                   <font style={{ fontFamily: "arial" }}>
                     <strong>Manage deployment of the best idea </strong>
                   </font>
@@ -287,7 +287,7 @@ export default () => {
                     <font color="white">Try for free</font>
                   </a>
                   <p>
-                    <small>No Credit Card Required!</small>
+                    <small className="text-white">No Credit Card Required!</small>
                   </p>
                 </div>
               </div>
@@ -298,13 +298,13 @@ export default () => {
               direction="row"
               justify="center"
               alignItems="center"
-              lg={7}
+              lg={8}
               className="d-none d-lg-block text-center"
             >
               <img
                 src={Banner4Sm}
                 alt=""
-                style={{minWidth:'400px',width:'600px'}}
+                style={{minWidth:'400px',width:'100%'}}
                 className="img-fluid mx-auto"
               />
             </Grid>

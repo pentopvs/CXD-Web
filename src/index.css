@@ -104,7 +104,7 @@ span :hover {
     text-align: left;
   }
   .intro-lead-in {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 55px;
     margin-bottom: 25px;
   }
@@ -299,7 +299,7 @@ input:checked + .slider:before {
 .step-text {
   font-size: 40px;
 }
-.intro-lead-in.text-uppercase {
+.intro-lead-in {
   color: #ffc003;
 }
 
