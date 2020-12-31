@@ -26,7 +26,7 @@ export default class extends Component {
         </div>
         <div
           className="bg-gradient px-3 px-lg-5 py-3"
-          style={{ minHeight: "90vh", height: "auto" }}
+          style={{height: "auto" }}
         >
           <CarouselNew />
         </div>

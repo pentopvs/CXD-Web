@@ -3,10 +3,10 @@ import Banner1 from "../../../assets/Home/CX-deployer-banner-3.png";
 import Banner2 from "../../../assets/Home/CX-deployer-banner-2.png";
 import Banner3 from "../../../assets/Home/CX-deployer-banner-1.png";
 import Banner4 from "../../../assets/Home/CX-deployer-banner-4.png";
-import Banner1Sm from "../../../assets/Home/CX-deployer-banner-9.png";
-import Banner2Sm from "../../../assets/Home/CX-deployer-banner-2-sm.png";
-import Banner3Sm from "../../../assets/Home/CX-deployer-banner-1-sm.png";
-import Banner4Sm from "../../../assets/Home/CX-deployer-banner-4-sm.png";
+import Banner1Sm from "../../../assets/Home/CX-deployer-new-screen-1.svg";
+import Banner2Sm from "../../../assets/Home/CX-deployer-new-screen-2.svg";
+import Banner3Sm from "../../../assets/Home/CX-deployer-new-screen-3.svg";
+import Banner4Sm from "../../../assets/Home/CX-deployer-new-screen-4.svg";
 import Slider1 from "../../../assets/Home/slider1.png";
 import Slider2 from "../../../assets/Home/slider2.jpg";
 import Slider3 from "../../../assets/Home/slider3.png";
@@ -27,7 +27,7 @@ export default () => {
       className="carousel bg-white rounded-lg slide"
       data-ride="carousel"
     >
-      <ol className="carousel-indicators">
+      <ol className="carousel-indicators mt-5 mt-md-0">
         <li
           data-target="#carouselExampleIndicators"
           data-slide-to={0}
@@ -40,9 +40,6 @@ export default () => {
       <div className="carousel-inner">
         <div
           className="carousel-item rounded active"
-          style={{
-            minHeight: "80vh",
-          }}
         >
           <Grid
             container
@@ -52,8 +49,8 @@ export default () => {
             className="carousel-div mx-auto"
             xs={11}
           >
-            <Grid item md={12} lg={6} className="d-md-none">
-              <img src={Banner1Sm} alt="" className="img-fluid" />
+            <Grid item sm={12} lg={6} className="d-lg-none text-center">
+              <img src={Banner1Sm} alt="" style={{width:'100%'}} className="img-fluid mx-auto" />
             </Grid>
             <Grid item md={12} lg={5}>
               <div className="intro-text p-md-5">
@@ -95,22 +92,20 @@ export default () => {
               justify="center"
               alignItems="center"
               lg={7}
-              className="d-none d-md-block"
+              className="d-none d-lg-block text-center" 
             >
               <img
                 src={Banner1Sm}
                 alt=""
-                className="img-fluid"
-                style={{ height: "400px !important" }}
+                style={{minWidth:'400px',width:'600px'}}
+                className="img-fluid mx-auto"
               />
             </Grid>
           </Grid>
         </div>
         <div
           className="carousel-item rounded"
-          style={{
-            minHeight: "88vh",
-          }}
+
         >
           <Grid
             container
@@ -120,12 +115,12 @@ export default () => {
             className="carousel-div mx-auto"
             xs={11}
           >
-            <Grid item md={12} lg={6} className="d-md-none">
+            <Grid item sm={12} lg={6} className="d-lg-none text-center">
               <img
                 src={Banner2Sm}
                 alt=""
-                style={{ minHeight: "10px" }}
-                className="img-fluid"
+                style={{ width: "90%" }}
+                className="img-fluid mx-auto"
               />
             </Grid>
 
@@ -166,22 +161,20 @@ export default () => {
               justify="center"
               alignItems="center"
               lg={7}
-              className="d-none d-md-block"
+              className="d-none d-lg-block text-center"
             >
               <img
                 src={Banner2Sm}
                 alt=""
-                style={{ minHeight: "10px" }}
-                className="img-fluid"
+                style={{width:'600px'}}
+                className="img-fluid mx-auto"
               />
             </Grid>
           </Grid>
         </div>
         <div
           className="carousel-item third rounded"
-          style={{
-            minHeight: "88vh",
-          }}
+
         >
           <Grid
             container
@@ -191,10 +184,12 @@ export default () => {
             className="carousel-div mx-auto"
             xs={11}
           >
-            <Grid item md={12} lg={6} className="d-md-none">
+            <Grid item sm={12} lg={6} className="d-lg-none">
               <img
                 src={Banner3Sm}
                 alt=""
+                style={{ width: "90%" }}
+                className="img-fluid mx-auto"
               />
             </Grid>
 
@@ -235,17 +230,19 @@ export default () => {
               justify="center"
               alignItems="center"
               lg={7}
-              className="d-none d-md-block"
+              className="d-none d-lg-block text-center"
             >
-              <img src={Banner3Sm} alt="" />
+              <img src={Banner3Sm} alt="" 
+                                style={{minWidth:'400px',width:'600px'}}
+                className="img-fluid mx-auto"
+
+              />
             </Grid>
           </Grid>
         </div>
         <div
           className="carousel-item fourth rounded"
-          style={{
-            minHeight: "88vh",
-          }}
+
         >
           <Grid
             container
@@ -255,10 +252,13 @@ export default () => {
             className="carousel-div mx-auto"
             xs={11}
           >
-            <Grid item md={12} lg={6} className="d-md-none">
+            <Grid item sm={12} lg={6} className="d-lg-none">
               <img
                 src={Banner4Sm}
                 alt=""
+                style={{ width: "90%" }}
+                className="img-fluid mx-auto"
+
               />
             </Grid>
 
@@ -299,11 +299,13 @@ export default () => {
               justify="center"
               alignItems="center"
               lg={7}
-              className="d-none d-md-block"
+              className="d-none d-lg-block text-center"
             >
               <img
                 src={Banner4Sm}
                 alt=""
+                style={{minWidth:'400px',width:'600px'}}
+                className="img-fluid mx-auto"
               />
             </Grid>
           </Grid>

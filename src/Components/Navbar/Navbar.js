@@ -95,7 +95,7 @@ export default () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/Pricing">
+              <Link className="nav-link js-scroll-trigger" to="/pricing">
                 Pricing
               </Link>
             </li>
@@ -105,7 +105,7 @@ export default () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/Contactus">
+              <Link className="nav-link js-scroll-trigger" to="/contactus">
                 Contact US
               </Link>
             </li>

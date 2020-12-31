@@ -135,9 +135,6 @@ span :hover {
 .carousel {
   position: relative;
 }
-.carousel img {
-  min-height: 100vh;
-}
 
 .masthead {
   position: absolute;
@@ -329,6 +326,14 @@ input:checked + .slider:before {
   transition: 0.6s all ease;
   padding: 10px 25px;
 }
+.btn-green {
+  border-radius: 5rem !important;
+  width: auto;
+  background-size: 200%;
+  color: white;
+  transition: 0.6s all ease;
+  box-shadow: 0px 4px 10px 2px #222121e8;
+}
 .btn-outline-first {
   color: #0a79df !important;
   border: 1px solid #0a79df !important;
@@ -369,3 +374,16 @@ input:checked + .slider:before {
     }
 }
 
+
+
+.priceList {
+  counter-reset: list;
+  font-weight: 500;
+}
+.priceList > li {
+  list-style: none;
+}
+.priceList > li:before {
+  content: counter(list) "). ";
+  counter-increment: list;
+}

@@ -6,9 +6,9 @@ import Startup from "../assets/Pricing/startup.svg";
 import Growth from "../assets/Pricing/growth.svg";
 import Enterprise from "../assets/Pricing/enterprise.svg";
 import { Link } from "react-router-dom";
-import MetaTags from 'react-meta-tags';
-import Logo from '../assets/Home/logo.png';
-
+import MetaTags from "react-meta-tags";
+import Logo from "../assets/Home/logo.png";
+import "../index.css";
 // const Collapse = ({ question, answer, id }) => (
 //   <div className="accordion" id="accordionExample">
 //     <div className="card">
@@ -48,12 +48,20 @@ export default () => {
       id="pricinghome"
       style={{ color: isYearly ? "col1" : "col2" }}
     >
-              <MetaTags>
-            <title>User Journey Map | Service Blueprint | Forever Free | CXDeployer</title>
-            <meta name="description" content="Lifetime free. Affordable pricing for individuals, small and large organizations" />
-            <meta property="og:title" content="User Journey Map | Service Blueprint | Forever Free | CXDeployer" />
-            <meta property="og:image" content={Logo} />
-          </MetaTags>
+      <MetaTags>
+        <title>
+          User Journey Map | Service Blueprint | Forever Free | CXDeployer
+        </title>
+        <meta
+          name="description"
+          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+        />
+        <meta
+          property="og:title"
+          content="User Journey Map | Service Blueprint | Forever Free | CXDeployer"
+        />
+        <meta property="og:image" content={Logo} />
+      </MetaTags>
 
       <div className="container mt-5">
         <div className="h3  pricing-lead-fourth text-center">
@@ -94,7 +102,17 @@ export default () => {
             </font>
           </div>
         </div>
-
+        <div className="text-center row">
+        <a
+                  href="https://app.cxdeployer.com/"
+                  target="_blank"
+                  without
+                  rel="noopener noreferrer"
+                  className="btn btn-block btn-green bg-success text-uppercase mt-4 col-auto mx-auto px-5"
+                >
+Get started with free forever account
+                </a>
+        </div>
         <section className="pricing py-5">
           {/* Free Tier */}
           <div className="card-deck">
@@ -102,46 +120,60 @@ export default () => {
               <div className="card-body">
                 <img src={Free} className="card-img-top  p-3" alt="..." />
                 <h5 className="card-title text-muted text-uppercase text-center">
-                  Free
+                  Life time
                 </h5>
                 <hr />
                 <div className="text-center mb-2">
-                  Get started and try our design thinking tools. Upgrade at any
-                  time.
+                  All features unlimited and upto 1 GB storage*
                 </div>
+                <div style={{ fontSize: "13px" }} className="pt-3 text-center">
+                  &nbsp; *buy additional storage on demand &nbsp;
+                </div>
+
                 <h6 className="card-price text-center pt-2">
-                  $0<span className="period">/month</span>
+                  $499
+                  {/* <span className="period">/month</span> */}
                 </h6>
                 <div className="text-center">
-                  <small>&nbsp;</small>
+                  <small>&nbsp;(no monthly fee fever)</small>
                 </div>
                 <a
                   href="https://app.cxdeployer.com/"
                   target="_blank"
                   without
                   rel="noopener noreferrer"
-                  className="btn btn-block btn-first text-uppercase mt-4"
+                  className="btn btn-block bg-danger text-white text-uppercase mt-4"
                 >
-                  Try for free
+                  Order Now
                 </a>
-                <div className="pt-3 text-center">
+                {/* <div className="pt-3 text-center">
                   &nbsp; <br /> &nbsp;
-                </div>
+                </div> */}
                 <hr />
-                <ul className="fa-ul">
-                  <li>
-                    <strong>Free plan includes:</strong>
-                  </li>
+                <ol
+                  style={{ listStyleType: "decimal" }}
+                  className="fa-ul priceList"
+                >
                   <li>1 User</li>
-                  <li>1 Project</li>
-                  <li>1 Customer Journey Map</li>
-                  <li>1 Business Model Canvas</li>
-                  <li>1 Persona</li>
-                  <li>Export to PDF & PNG</li>
-                  <li>Up to 50MB Storage</li>
-                  <li>Includes Audit Trial</li>
-                  <li>Community Support</li>
-                </ul>
+                  <li>Unlimited Project</li>
+                  <li>Unlimited Persona</li>
+                  <li>Unlimited Journey Map</li>
+                  <li>Unlimited Empathy Map</li>
+                  <li>Unlimited Business Model Canvas</li>
+                  <li>Unlimited Idea Capture</li>
+                  <li>Unlimited Idea Voting</li>
+                  <li>Unlimited Idea Evaluation</li>
+                  <li>Unlimited Idea Collaboration</li>
+                  <li>Unlimited Kanban Board</li>
+                  <li>Unlimited Tasks</li>
+                  <li>Unlimited Views</li>
+                  <li>Upto 1 GB Storage</li>
+                  <li>Create Own Templates </li>
+                  <li>Includes Audit Trail</li>
+                  <li>Real-time Mapping</li>
+                  <li>Export to PNG</li>
+                  <li>Email Support</li>
+                </ol>
               </div>
             </div>
             <div className="card mb-5 mb-lg-0">
@@ -152,16 +184,19 @@ export default () => {
                 </h5>
                 <hr />
                 <div className="text-center mb-2">
-                  For individuals, consultants and startups to digitize their
-                  design thinking workshops.
+                  All features unlimited and upto 50 GB storage
                 </div>
+                <div style={{ fontSize: "13px" }} className="pt-3 text-center">
+                  &nbsp; <br/> &nbsp;
+                </div>
+
                 <h6 className="card-price text-center pt-2">
                   ${isYearly ? "10" : "12"}
                   <span className="period">per user/month</span>
                 </h6>
-                {/* <div className="text-center">
-                  <small>(During Beta *)</small>
-  </div>*/}
+                <div className="text-center">
+                  <small>(paid annually)</small>
+                </div>
                 <a
                   href="https://app.cxdeployer.com/"
                   target="_blank"
@@ -171,28 +206,39 @@ export default () => {
                 >
                   Try for free
                 </a>
-                <div className="pt-3 text-center">
+                {/* <div className="pt-3 text-center">
                   * Subscribe now and get this price for next 12 months
-                </div>
+                </div> */}
                 <hr />
-                <ul className="fa-ul">
-                  <li>
+                <ol
+                  style={{ listStyleType: "decimal" }}
+                  className="fa-ul priceList"
+                >
+                  {/* <li>
                     <strong>Startup Plan Includes:</strong>
-                  </li>
+                  </li> */}
+
                   <li>Up to 5 Users</li>
-                  <li>Unlimited Projects</li>
-                  <li>Unlimited Customer Journey map</li>
+                  <li>Unlimited Project</li>
+                  <li>Unlimited Persona</li>
+                  <li>Unlimited Journey Map</li>
+                  <li>Unlimited Empathy Map</li>
                   <li>Unlimited Business Model Canvas</li>
-                  <li>Unlimited Personas</li>
-                  <li>Unlimited Ideations</li>
-                  <li>Unlimited Kanban Boards</li>
-                  <li>Unlimited Comments</li>
+                  <li>Unlimited Idea Capture</li>
+                  <li>Unlimited Idea Voting</li>
+                  <li>Unlimited Idea Evaluation</li>
+                  <li>Unlimited Idea Collaboration</li>
+                  <li>Unlimited Kanban Board</li>
+                  <li>Unlimited Tasks</li>
                   <li>Unlimited Views</li>
-                  <li>Export to PDF & PNG</li>
-                  <li>Up to 10 GB Storage</li>
-                  <li>Includes Audit Trial</li>
-                  <li>E-mail Support</li>
-                </ul>
+                  <li>Upto 50GB Storage</li>
+                  <li>Create Own Templates </li>
+                  <li>Includes Audit Trai</li>
+                  <li>Real-time Mapping</li>
+                  <li>Export to PNG</li>
+                  <li>Email Support</li>
+                  <li>Email & Live Chat Support</li>
+                </ol>
               </div>
             </div>
             {/* Plus Tier */}
@@ -204,16 +250,19 @@ export default () => {
                 </h5>
                 <hr />
                 <div className="text-center mb-2">
-                  For growing organization and consulting teams to create and
-                  deliver design thinking.
+                  All features unlimited and unlimited storage
                 </div>
+                <div style={{ fontSize: "13px" }} className="pt-3 text-center">
+                  &nbsp; <br/> &nbsp;
+                </div>
+
                 <h6 className="card-price text-center pt-2">
                   ${isYearly ? "20" : "24"}
                   <span className="period">per user/month</span>
                 </h6>
-                {/*<div className="text-center">
-                  <small>(During Beta *)</small>
-</div>*/}
+                <div className="text-center">
+                  <small>(paid annually)</small>
+                </div>
                 <a
                   href="https://app.cxdeployer.com/"
                   target="_blank"
@@ -223,28 +272,39 @@ export default () => {
                 >
                   Try for free
                 </a>
-                <div className="pt-3 text-center">
+                {/* <div className="pt-3 text-center">
                   * Subscribe now and get this price for next 12 months
-                </div>
+                </div> */}
                 <hr />
-                <ul className="fa-ul">
-                  <li>
-                    <strong>Growth Plan Includes:</strong>
-                  </li>
+                <ol
+                  style={{ listStyleType: "decimal" }}
+                  className="fa-ul priceList"
+                >
+                  {/* <li>
+                    <strong>Startup Plan Includes:</strong>
+                  </li> */}
+
                   <li>Unlimited Users</li>
-                  <li>Unlimited Projects</li>
-                  <li>Unlimited Customer Journey map</li>
+                  <li>Unlimited Project</li>
+                  <li>Unlimited Persona</li>
+                  <li>Unlimited Journey Map</li>
+                  <li>Unlimited Empathy Map</li>
                   <li>Unlimited Business Model Canvas</li>
-                  <li>Unlimited Personas</li>
-                  <li>Unlimited Ideations</li>
-                  <li>Unlimited Kanban Boards</li>
-                  <li>Unlimited Comments</li>
+                  <li>Unlimited Idea Capture</li>
+                  <li>Unlimited Idea Voting</li>
+                  <li>Unlimited Idea Evaluation</li>
+                  <li>Unlimited Idea Collaboration</li>
+                  <li>Unlimited Kanban Board</li>
+                  <li>Unlimited Tasks</li>
                   <li>Unlimited Views</li>
-                  <li>Export to PDF & PNG</li>
                   <li>Unlimited Storage</li>
-                  <li>Includes Audit Trial</li>
-                  <li>Live chat & E-mail Support</li>
-                </ul>
+                  <li>Create Own Templates </li>
+                  <li>Includes Audit Trai</li>
+                  <li>Real-time Mapping</li>
+                  <li>Export to PNG</li>
+                  <li>Email Support</li>
+                  <li>Email & Live Chat Support</li>
+                </ol>
               </div>
             </div>
             {/* Pro Tier */}
@@ -256,39 +316,54 @@ export default () => {
                 </h5>
                 <hr />
                 <div className="text-center mb-2">
-                  For large organization that believes in design thinking as a
-                  way of life.
+                  Install on your private server
                 </div>
+                <div style={{ fontSize: "13px" }} className="pt-3 text-center">
+                  &nbsp; <br/> &nbsp;
+                </div>
+
                 <h6 className="card-price text-center pt-2">
-                  <div className="h5 my-4 py-2">
-                    Install on your private server
-                  </div>
+                  <div className="h5 my-4 py-2">Contact us for the quote</div>
                 </h6>
                 <Link className="btn btn-block btn-first text-uppercase mt-4">
-                  Contact Us
+                  Contact us
                 </Link>
-                <div className="pt-3 text-center">
+                {/* <div className="pt-3 text-center">
                   &nbsp; <br /> &nbsp;
-                </div>
+                </div> */}
                 <hr />
-                <ul className="fa-ul">
-                  <li>
-                    <strong>Enterprise Plan Is: </strong>
-                  </li>
+                <ol
+                  style={{ listStyleType: "decimal" }}
+                  className="fa-ul priceList"
+                >
+                  {/* <li>
+                    <strong>Startup Plan Includes:</strong>
+                  </li> */}
+
                   <li>Unlimited Users</li>
-                  <li>Unlimited Projects</li>
-                  <li>Unlimited Customer Journey map</li>
+                  <li>Unlimited Project</li>
+                  <li>Unlimited Persona</li>
+                  <li>Unlimited Journey Map</li>
+                  <li>Unlimited Empathy Map</li>
                   <li>Unlimited Business Model Canvas</li>
-                  <li>Unlimited Personas</li>
-                  <li>Unlimited Ideations</li>
-                  <li>Unlimited Kanban Boards</li>
-                  <li>Unlimited Comments</li>
+                  <li>Unlimited Idea Capture</li>
+                  <li>Unlimited Idea Voting</li>
+                  <li>Unlimited Idea Evaluation</li>
+                  <li>Unlimited Idea Collaboration</li>
+                  <li>Unlimited Kanban Board</li>
+                  <li>Unlimited Tasks</li>
                   <li>Unlimited Views</li>
-                  <li>Export to PDF & PNG</li>
                   <li>Unlimited Storage</li>
-                  <li>Includes Audit Trial</li>
-                  <li>Single Sign-On Support</li>
-                </ul>
+                  <li>Create Own Templates </li>
+                  <li>Includes Audit Trai</li>
+                  <li>Real-time Mapping</li>
+                  <li>Export to PNG</li>
+                  <li>Email Support</li>
+                  <li>Email & Live Chat Support</li>
+                  <li>Sign sign-on</li>
+                  <li>Customization</li>
+                  <li>White labeling</li>
+                </ol>
               </div>
             </div>
           </div>

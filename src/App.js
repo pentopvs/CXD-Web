@@ -10,7 +10,7 @@ import {
   TermsOfUse,
   Features,
 } from "./Pages";
-
+import CreatePayment from "./Pages/Payment/CreatePayment";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // very important for Routing
 import AllBlogs from "./Pages/Blog/AllBlogs";
 import Blog from "./Pages/Blog/Blog";
@@ -24,14 +24,15 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/Pricing" component={Pricing} />
-            <Route path="/Contactus" component={Contactus} />
-            <Route path="/Cookies" component={Cookies} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/contactus" component={Contactus} />
+            <Route path="/cookies" component={Cookies} />
             <Route exact path={"/blog/:title"} component={PostPage} />
             <Route path="/privacypolicy" component={PrivacyPolicy} />
             <Route path="/terms" component={TermsOfUse} />
             <Route path="/features" component={Features} />
             <Route path="/blogs" component={AllBlogs} />
+            <Route path="/createpayment/:planid" component={CreatePayment} />
             {/* <Route path="/blog/:slug" component={Blog} />*/}
           </Switch>
           <Footer />

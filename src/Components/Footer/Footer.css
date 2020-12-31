@@ -1,19 +1,20 @@
-footer{
+footer {
   background-color: #24243e;
 }
-.footer-pages{
-  color: #7A84A5;
+.footer-pages {
+  color: #7a84a5;
 }
-.Footer-links{
-  color: #7A84A5;
+.Footer-links {
+  color: #7a84a5;
   font-size: 2em;
 }
-.Footer-links:hover,a:hover{
-  color: #E9EFF2 !important;
+.Footer-links:hover,
+a:hover {
+  color: #e9eff2 !important;
   text-decoration: none;
 }
 
-@media (min-width : 500px) {
+@media (min-width: 500px) {
   .foot {
     width: 50%;
   }
