@@ -4,6 +4,9 @@ import { getBlogs } from "../../Api";
 import HomeBlogCard from "./HomeBlogCard";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import MetaTags from 'react-meta-tags';
+import Logo from '../../assets/Home/logo.png';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -28,10 +31,15 @@ export default function AllBlogs() {
   useEffect(() => {
     fetchBlogs();
   }, []);
-  document.title =
-    "Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer";
   return (
     <div className="pt-3">
+      <MetaTags>
+        <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
+        <meta name="description" content="More than Customer Journey Map, the team behind CXDeployer, share their insights around experience design and research. Get access to exclusive resources from Industry Experience ..." />
+        <meta property="og:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+        <meta property="og:image" content={Logo} />
+      </MetaTags>
+
       <div className="container">
         <div className="container font-weight-bolder ml-4 text-left mb-3">
           <h1>All Blogs</h1>
@@ -56,47 +64,9 @@ export default function AllBlogs() {
             {data.map((blog) => {
               var title = blog.title.split(" ").join("-");
               console.log("blog : ", blog);
-              return (
-                <>
-                  {/* <div class="col-md-6">
-                  <div className="card">
-                    <div className="card-body">
-                      <h3 className="card-title">
-                        {blog.title}
-                        <sub className="d-flex justify-content-end p-1">
-                          - {blog.uploadDate.split("T")[0]}
-                        </sub>
-                      </h3>
-                      <div
-                        className="card-text"
-                        style={{
-                          height: 150,
-                          overflowY: "scroll",
-                          marginTop: 10,
-                        }}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: blog.blog_content,
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <Link
-                      className="btn btn-dark"
-                      to={{
-                        pathname: `/blog/${title}`,
-                        blog: blog,
-                      }}
-                      onClick={() => localStorage.setItem("blogId", blog._id)}
-                    >
-                      Read this article
-                    </Link>
-                  </div>
-                </div> */}
+              return (                
                   <HomeBlogCard blog={blog} />
-                  </>
-              );
+              )
             })}
             {/* </div> */}
           </Grid>

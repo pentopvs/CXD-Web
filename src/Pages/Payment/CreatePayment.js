@@ -12,7 +12,7 @@ export default class CreatePayment extends Component {
       fname: "",
       lname: "",
       email: "",
-      country: "India",
+      country: "",
       product: [],
       plan: [],
       INR: 0,
@@ -134,14 +134,14 @@ export default class CreatePayment extends Component {
               </div>
               <div class="form-group">
                 <input
-                  class="form-control mr-1"
+                  class="form-control mr-1  mb-1"
                   type="email"
                   placeholder="Email"
                   name="email"
                   onChange={(e) => this.handleChange(e)}
                   required
                 ></input>
-                <small class="text-danger float-left">
+                <small class="text-danger float-left  mb-1">
                   Note: Login Credentials will be sent to this email id
                 </small>
               </div>
@@ -171,7 +171,7 @@ export default class CreatePayment extends Component {
                     <div class="d-flex justify-content-between">
                       <span>{plan.planName}</span>
                       <span>
-                        {country == "Others"
+                        {country != "India"
                           ? "USD " + parseFloat(USD).toFixed(2)
                           : "INR " + parseFloat(INR).toFixed(2)}
                       </span>
@@ -183,7 +183,7 @@ export default class CreatePayment extends Component {
                             {"Discount " + parseFloat(discount) * 100 + "%"}
                           </span>
                           <span>
-                            {country == "Others"
+                            {country != "India"
                               ? "USD " + (parseFloat(USD) * discount).toFixed(2)
                               : "INR " +
                                 (parseFloat(INR) * discount).toFixed(2)}
@@ -192,7 +192,7 @@ export default class CreatePayment extends Component {
                         <div class="d-flex justify-content-between">
                           <span>SubTotal</span>
                           <span>
-                            {country == "Others"
+                            {country != "India"
                               ? "USD " +
                                 (
                                   parseFloat(USD) -
@@ -209,10 +209,10 @@ export default class CreatePayment extends Component {
                     )}
                     <div class="d-flex justify-content-between">
                       <span>
-                        Sales Tax{country == "Others" ? "" : "(18% GST)"}
+                        Sales Tax{country != "India" ? "" : "(18% GST)"}
                       </span>
                       <span>
-                        {country == "Others" ? "USD 0.00" : "INR " + tax}
+                        {country != "India" ? "USD 0.00" : "INR " + tax}
                       </span>
                     </div>
                   </div>
@@ -220,7 +220,7 @@ export default class CreatePayment extends Component {
                   <div class="d-flex justify-content-between">
                     <span class="font-weight-bold">Total</span>
                     <span class="font-weight-bold">
-                      {country == "Others"
+                      {country != "India"
                         ? "USD " +
                           (
                             parseFloat(USD) -
@@ -297,7 +297,7 @@ export default class CreatePayment extends Component {
                 token={this.makePayment}
                 name="Subscribe Now"
                 // amount={
-                //   country == "Others" ? USD : (INR + INR * 0.18).toFixed(2)
+                //   country != "India" ? USD : (INR + INR * 0.18).toFixed(2)
                 // }
               >
                 <button
