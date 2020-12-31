@@ -300,7 +300,7 @@ input:checked + .slider:before {
   font-size: 40px;
 }
 .intro-lead-in.text-uppercase {
-  color: rgb(119, 119, 119);
+  color: #ffc003;
 }
 
 /* styles added bu Anurag Gharat  */
@@ -327,12 +327,24 @@ input:checked + .slider:before {
   padding: 10px 25px;
 }
 .btn-green {
-  border-radius: 5rem !important;
-  width: auto;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0a79df,
+    #3c40c6,
+    #0a79df
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0a79df,
+    #3c40c6,
+    #0a79df
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: 200%;
   color: white;
   transition: 0.6s all ease;
-  box-shadow: 0px 4px 10px 2px #222121e8;
+  padding: 10px 25px;
+  border-radius: 5rem;
 }
 .btn-outline-first {
   color: #0a79df !important;
@@ -375,15 +387,6 @@ input:checked + .slider:before {
 }
 
 
-
-.priceList {
-  counter-reset: list;
-  font-weight: 500;
-}
 .priceList > li {
-  list-style: none;
-}
-.priceList > li:before {
-  content: counter(list) "). ";
-  counter-increment: list;
+  list-style: disc;
 }

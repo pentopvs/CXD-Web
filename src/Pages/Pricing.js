@@ -77,8 +77,8 @@ export default () => {
         </div>
         <p></p>
         <br></br>
-        <div className="row" style={{ marginLeft: "39%" }}>
-          <div className="btn-group" role="group">
+        <div className="row">
+          <div className="btn-group mx-auto" role="group">
             <button
               type="button"
               onClick={setIsYearly.bind(this, false)}
@@ -103,15 +103,15 @@ export default () => {
           </div>
         </div>
         <div className="text-center row">
-        <a
-                  href="https://app.cxdeployer.com/"
-                  target="_blank"
-                  without
-                  rel="noopener noreferrer"
-                  className="btn btn-block btn-green bg-success text-uppercase mt-4 col-auto mx-auto px-5"
-                >
-Get started with free forever account
-                </a>
+          <a
+            href="https://app.cxdeployer.com/"
+            target="_blank"
+            without
+            rel="noopener noreferrer"
+            className="btn btn-green text-uppercase mt-4 col-auto mx-auto px-5"
+          >
+            Get started with free forever account
+          </a>
         </div>
         <section className="pricing py-5">
           {/* Free Tier */}
@@ -123,7 +123,7 @@ Get started with free forever account
                   Life time
                 </h5>
                 <hr />
-                <div className="text-center mb-2">
+                <div className="text-center mb-2 fa-ul">
                   All features unlimited and upto 1 GB storage*
                 </div>
                 <div style={{ fontSize: "13px" }} className="pt-3 text-center">
@@ -150,10 +150,7 @@ Get started with free forever account
                   &nbsp; <br /> &nbsp;
                 </div> */}
                 <hr />
-                <ol
-                  style={{ listStyleType: "decimal" }}
-                  className="fa-ul priceList"
-                >
+                <ul className="fa-ul priceList">
                   <li>1 User</li>
                   <li>Unlimited Project</li>
                   <li>Unlimited Persona</li>
@@ -173,7 +170,7 @@ Get started with free forever account
                   <li>Real-time Mapping</li>
                   <li>Export to PNG</li>
                   <li>Email Support</li>
-                </ol>
+                </ul>
               </div>
             </div>
             <div className="card mb-5 mb-lg-0">
@@ -183,15 +180,15 @@ Get started with free forever account
                   Startup
                 </h5>
                 <hr />
-                <div className="text-center mb-2">
+                <div className="text-center mb-2 fa-ul">
                   All features unlimited and upto 50 GB storage
                 </div>
                 <div style={{ fontSize: "13px" }} className="pt-3 text-center">
-                  &nbsp; <br/> &nbsp;
+                  &nbsp; <br /> &nbsp;
                 </div>
 
                 <h6 className="card-price text-center pt-2">
-                  ${isYearly ? "10" : "12"}
+                  ${isYearly ? "20" : "24"}
                   <span className="period">per user/month</span>
                 </h6>
                 <div className="text-center">
@@ -210,10 +207,7 @@ Get started with free forever account
                   * Subscribe now and get this price for next 12 months
                 </div> */}
                 <hr />
-                <ol
-                  style={{ listStyleType: "decimal" }}
-                  className="fa-ul priceList"
-                >
+                <ul className="fa-ul priceList">
                   {/* <li>
                     <strong>Startup Plan Includes:</strong>
                   </li> */}
@@ -238,7 +232,7 @@ Get started with free forever account
                   <li>Export to PNG</li>
                   <li>Email Support</li>
                   <li>Email & Live Chat Support</li>
-                </ol>
+                </ul>
               </div>
             </div>
             {/* Plus Tier */}
@@ -249,15 +243,15 @@ Get started with free forever account
                   Growth
                 </h5>
                 <hr />
-                <div className="text-center mb-2">
+                <div className="text-center mb-2 fa-ul">
                   All features unlimited and unlimited storage
                 </div>
                 <div style={{ fontSize: "13px" }} className="pt-3 text-center">
-                  &nbsp; <br/> &nbsp;
+                  &nbsp; <br /> &nbsp;
                 </div>
 
                 <h6 className="card-price text-center pt-2">
-                  ${isYearly ? "20" : "24"}
+                  ${isYearly ? "30" : "36"}
                   <span className="period">per user/month</span>
                 </h6>
                 <div className="text-center">
@@ -276,10 +270,7 @@ Get started with free forever account
                   * Subscribe now and get this price for next 12 months
                 </div> */}
                 <hr />
-                <ol
-                  style={{ listStyleType: "decimal" }}
-                  className="fa-ul priceList"
-                >
+                <ul className="fa-ul priceList">
                   {/* <li>
                     <strong>Startup Plan Includes:</strong>
                   </li> */}
@@ -304,7 +295,7 @@ Get started with free forever account
                   <li>Export to PNG</li>
                   <li>Email Support</li>
                   <li>Email & Live Chat Support</li>
-                </ol>
+                </ul>
               </div>
             </div>
             {/* Pro Tier */}
@@ -315,11 +306,11 @@ Get started with free forever account
                   Enterprise
                 </h5>
                 <hr />
-                <div className="text-center mb-2">
+                <div className="text-center mb-2 fa-ul">
                   Install on your private server
                 </div>
                 <div style={{ fontSize: "13px" }} className="pt-3 text-center">
-                  &nbsp; <br/> &nbsp;
+                  &nbsp; <br /> &nbsp;
                 </div>
 
                 <h6 className="card-price text-center pt-2">
@@ -332,10 +323,7 @@ Get started with free forever account
                   &nbsp; <br /> &nbsp;
                 </div> */}
                 <hr />
-                <ol
-                  style={{ listStyleType: "decimal" }}
-                  className="fa-ul priceList"
-                >
+                <ul className="fa-ul priceList">
                   {/* <li>
                     <strong>Startup Plan Includes:</strong>
                   </li> */}
@@ -363,7 +351,7 @@ Get started with free forever account
                   <li>Sign sign-on</li>
                   <li>Customization</li>
                   <li>White labeling</li>
-                </ol>
+                </ul>
               </div>
             </div>
           </div>

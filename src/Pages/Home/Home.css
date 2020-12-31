@@ -170,9 +170,25 @@
   text-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.3);
 }
 
-.bg-gradient {
-  background-image: #fff;
+@media(max-width:500px){
+  .bg-gradient {
+    background-size:300% !important;
+    background-position-y: 50% !important;
+    background-position-x: 50% !important;
+    background-image: url('../../assets/Home/home-background.jpg');  
+    background-repeat: repeat-y;
+    background-color: rgb(36,36,62);
+  }
 }
+
+.bg-gradient {
+  background-size:220% !important;
+  background-position-y: 30% !important;
+  background-position-x: 50% !important;
+  background-image: url('../../assets/Home/home-background.jpg');  
+  background-repeat: no-repeat;
+}
+
 .step {
   padding: 8px;
   border-bottom: 8px solid #bdcdea;

@@ -3,10 +3,10 @@ import Banner1 from "../../../assets/Home/CX-deployer-banner-3.png";
 import Banner2 from "../../../assets/Home/CX-deployer-banner-2.png";
 import Banner3 from "../../../assets/Home/CX-deployer-banner-1.png";
 import Banner4 from "../../../assets/Home/CX-deployer-banner-4.png";
-import Banner1Sm from "../../../assets/Home/CX-deployer-new-screen-1.svg";
-import Banner2Sm from "../../../assets/Home/CX-deployer-new-screen-2.svg";
-import Banner3Sm from "../../../assets/Home/CX-deployer-new-screen-3.svg";
-import Banner4Sm from "../../../assets/Home/CX-deployer-new-screen-4.svg";
+import Banner1Sm from "../../../assets/Home/CX-deployer-carousel-1.png";
+import Banner2Sm from "../../../assets/Home/CX-deployer-carousel-2.png";
+import Banner3Sm from "../../../assets/Home/CX-deployer-carousel-3.png";
+import Banner4Sm from "../../../assets/Home/CX-deployer-carousel-4.png";
 import Slider1 from "../../../assets/Home/slider1.png";
 import Slider2 from "../../../assets/Home/slider2.jpg";
 import Slider3 from "../../../assets/Home/slider3.png";
@@ -24,7 +24,7 @@ export default () => {
   return (
     <div
       id="carouselExampleIndicators"
-      className="carousel bg-white rounded-lg slide"
+      className="carousel rounded-lg slide"
       data-ride="carousel"
     >
       <ol className="carousel-indicators mt-5 mt-md-0">
@@ -61,7 +61,7 @@ export default () => {
                     </strong>
                   </font>
                 </div>
-                <div className="intro-desc">
+                <div className="intro-desc text-white">
                   <font style={{ fontFamily: "Arial" }}>
                     The design thinking platform for you and your team for
                     designing personas and business models, mapping customer
@@ -131,7 +131,7 @@ export default () => {
                     <strong>Collaborate and map the current experience</strong>
                   </font>
                 </div>
-                <div className="intro-desc">
+                <div className="intro-desc text-white">
                   <font style={{ fontFamily: "Arial" }}>
                     The simplest tool to capture the current experience along
                     with collaborating and sharing feedback with the team in
@@ -200,7 +200,7 @@ export default () => {
                     <strong>Capture ideas to improve experience</strong>
                   </font>
                 </div>
-                <div className="intro-desc">
+                <div className="intro-desc text-white">
                   <font style={{ fontFamily: "Arial" }}>
                     A powerful and intuitive tool to capture and discover the
                     most impactful ideas from everyone to innovate on user
@@ -269,7 +269,7 @@ export default () => {
                     <strong>Manage deployment of the best idea </strong>
                   </font>
                 </div>
-                <div className="intro-desc">
+                <div className="intro-desc text-white">
                   <font style={{ fontFamily: "Arial" }}>
                     An integrated software to project manage the execution of
                     the best idea with visual task management to realize the

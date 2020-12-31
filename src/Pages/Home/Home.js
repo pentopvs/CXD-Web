@@ -12,8 +12,6 @@ import MetaTags from 'react-meta-tags';
 import Logo from '../../assets/Home/logo.png';
 export default class extends Component {
   render = () => {
-    document.title =
-      "Customer Journey Mapping | Ideation Management | Task Management | CXDeployer";
     return (
       <div>
       <div className="wrapper">
@@ -24,7 +22,7 @@ export default class extends Component {
             <meta property="og:image" content={Logo} />
           </MetaTags>
         </div>
-        <div
+          <div
           className="bg-gradient px-3 px-lg-5 py-3"
           style={{height: "auto" }}
         >

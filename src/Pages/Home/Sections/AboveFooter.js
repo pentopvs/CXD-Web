@@ -19,6 +19,7 @@ export default () => (
             rel="noopener noreferrer"
             href="https://app.cxdeployer.com/#/"
             target="_blank"
+            style={{borderRadius:'5rem !important'}}
             className="text-white btn-first"
           >
             Try for free
