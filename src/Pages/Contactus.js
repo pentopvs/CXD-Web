@@ -5,90 +5,36 @@ import Submitrequest from "../assets/Home/request.svg";
 import { AiFillWechat } from "react-icons/ai";
 import { FaHandshake } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import MetaTags from "react-meta-tags";
+
+import Logo from "../assets/Home/logo.png";
 
 export default () => {
   document.title = "Contact us | CXDeployer";
   return (
     <div>
-      {/* <div className="container mt-3">
-        <div class="card-deck">
-          <div className="card border-0 shadow-lg">
-            <div className="d-flex justify-content-center">
-              <img
-                className="card-img-top pt-4"
-                src={Livechat}
-                style={styles.cardImg}
-                alt="Card cap2"
-                style={{ height: "180px" }}
-              />
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Live Chat</h5>
-              <p className="card-text">Wait time: less than 2 minutes</p>
-              <p> Working hours: 8:00am - 3:00pm</p>
-            </div>
-            <div class="card-footer mb-3 text-center bg-transparent border-top-0">
-              <a
-                rel="noopener noreferrer"
-                href="https://api.whatsapp.com/send?phone=+919669911101"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                Chat Now
-              </a>
-            </div>
-          </div>
-          <div className="card border-0 shadow-lg">
-            <div className="d-flex justify-content-center">
-              <img
-                className="card-img-top pt-4"
-                src={Schedulemeeting}
-                style={styles.cardImg}
-                alt="Card cap1"
-                style={{ height: "180px" }}
-              />
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Schedule a meeting</h5>
-              <p>Get a call within 24hrs</p>
-            </div>
-            <div className="card-footer mb-3 text-center bg-transparent border-top-0">
-        
-            <a href="https://calendly.com/gharatanurag778/15min"  >Schedule time </a>
-            </div>
-          </div>
-          <div className="card border-0 shadow-lg">
-            <div className="d-flex justify-content-center">
-              <img
-                className="card-img-top pt-4"
-                src={Submitrequest}
-                style={styles.cardImg}
-                alt="Card cap3"
-                style={{ height: "180px" }}
-              />
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Submit a request</h5>
-              <p className="card-text">Send a request directly to us!</p>
-              <p>Maximun response time: within 1 business day</p>
-            </div>
-            <div class="card-footer mb-3 text-center bg-transparent border-top-0">
-              <a
-                rel="noopener noreferrer"
-                href="mailto:contact@xsdeployer.com"
-                target="_blank"
-                class="btn btn-primary"
-              >
-                Submit
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> */}
+          <MetaTags>
+        <title>Contact us | CXDeployer</title>
+            <meta name="title" content="Contact us | CXDeployer"/>
+            <meta name="description" content="The best customer engagement and support"/>
+            {/* <!-- Open Graph / Facebook --> */}
+            <meta property="og:type" content="website"/>
+            <meta property="og:description" content="The best customer engagement and support" />
+            <meta property="og:title" content="Contact us | CXDeployer" />
+            <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
+            <meta property="og:url" content={`https://cxdeployer.com/contactus`} />
+
+            {/* <!-- Twitter -- /> */}
+            <meta property="twitter:card" content="Blog" />
+            <meta property="twitter:url" content={`https://cxdeployer.com/contactus`} />
+            <meta property="twitter:title" content="Contact us | CXDeployer" />
+            <meta property="twitter:description" content="The best customer engagement and support" />
+            <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`} />
+      </MetaTags>
+
       <div className=" mt-5 mb-5 text-center container">
         <h1>Contact Us</h1>
       </div>
-
       <div className="container mt-5 mb-5">
         <div className="row text-center pb-5">
           <div className="col-lg-4 col-sm-12">
