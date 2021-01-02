@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import BlogCard from "./BlogCard";
 import { getBlogs } from "../../Api";
 import HomeBlogCard from "./HomeBlogCard";
 import { Grid } from "@material-ui/core";
@@ -35,9 +34,24 @@ export default function AllBlogs() {
     <div className="pt-3">
       <MetaTags>
         <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
-        <meta name="description" content="More than Customer Journey Map, the team behind CXDeployer, share their insights around experience design and research. Get access to exclusive resources from Industry Experience ..." />
-        <meta property="og:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
-        <meta property="og:image" content={Logo} />
+            <meta name="title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
+            <meta name="description" content="Manage CX transformation program and achieve customer experience excellence"/>
+
+            {/* <!-- Open Graph / Facebook --> */}
+            <meta property="og:type" content="website"/>
+            <meta property="og:description" content="Manage CX transformation program and achieve customer experience excellence." />
+            <meta property="og:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
+            <meta property="og:url" content="https://cxdeployer.com/blogs" />
+
+            {/* <!-- Twitter -- /> */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content="https://cxdeployer.com/blogs" />
+            <meta property="twitter:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="twitter:description" content="Manage CX transformation program and achieve customer experience excellence" />
+            <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`}   />
+
+
       </MetaTags>
 
       <div className="container">

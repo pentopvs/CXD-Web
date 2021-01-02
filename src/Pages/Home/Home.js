@@ -17,9 +17,23 @@ export default class extends Component {
       <div className="wrapper">
           <MetaTags>
             <title>Customer Journey Mapping | Ideation Management | Task Management – CXDeployer </title>
-            <meta name="description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management." />
+            <meta name="title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer "/>
+            <meta name="description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management."/>
+
+            {/* <!-- Open Graph / Facebook --> */}
+            <meta property="og:type" content="website"/>
+            <meta property="og:description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management." />
             <meta property="og:title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer " />
-            <meta property="og:image" content={Logo} />
+            <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
+            <meta property="og:url" content="https://cxdeployer.com/" />
+
+            {/* <!-- Twitter -- /> */}
+            <meta property="twitter:card" content="CXdeployer" />
+            <meta property="twitter:url" content="https://cxdeployer.com/" />
+            <meta property="twitter:description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management." />
+            <meta property="twitter:title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer " />
+            <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`} />
+
           </MetaTags>
         </div>
           <div

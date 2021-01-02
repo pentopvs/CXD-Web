@@ -16,9 +16,23 @@ export default () => {
          <div className="wrapper">
           <MetaTags>
             <title>Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
-            <meta name="description" content="Manage CX transformation program and achieve customer experience excellence." />
+            <meta name="title" content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
+            <meta name="description" content="Manage CX transformation program and achieve customer experience excellence"/>
+
+            {/* <!-- Open Graph / Facebook --> */}
+            <meta property="og:type" content="website"/>
+            <meta property="og:description" content="Manage CX transformation program and achieve customer experience excellence." />
             <meta property="og:title" content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
-            <meta property="og:image" content={Logo} />
+            <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
+            <meta property="og:url" content="https://cxdeployer.com/features" />
+
+            {/* <!-- Twitter -- /> */}
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content="https://cxdeployer.com/features" />
+            <meta property="twitter:title" content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="twitter:description" content="Manage CX transformation program and achieve customer experience excellence" />
+            <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`}   />
+
           </MetaTags>
         </div>
       <div className="intro-text text-center py-md-5 mb-5 p-5">

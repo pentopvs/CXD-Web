@@ -5,8 +5,9 @@ import axios from "axios";
 import { getBlogs } from "../../Api";
 import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import RecommCard from "./recommblogs";
+import MetaTags from 'react-meta-tags';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -84,12 +85,34 @@ function PostPage(props) {
 
     // setPost(props.location.blog);
   }, []);
-  document.title =
-    "View Blog | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer";
-
+  var blogUrl = ''
+  try{
+    blogUrl = post.title.split(" ").join("-")   
+  }
+  catch(err) {
+    console.log("Error : ",err)
+  }
   return (
     <div>
       <div className="postPage" style={{ width: "80%", margin: "3rem auto" }}>
+      <MetaTags>
+        <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
+            <meta name="title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
+            <meta name="description" content={post.description}/>
+            {/* <!-- Open Graph / Facebook --> */}
+            <meta property="og:type" content="website"/>
+            <meta property="og:description" content={post.description} />
+            <meta property="og:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="og:image" content={`https://cxdeployer.com${post.titleImage}`} />
+            <meta property="og:url" content={`https://cxdeployer.com/blog/${blogUrl}`} />
+
+            {/* <!-- Twitter -- /> */}
+            <meta property="twitter:card" content="Blog" />
+            <meta property="twitter:url" content={`https://cxdeployer.com/blog/${blogUrl}`} />
+            <meta property="twitter:title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
+            <meta property="twitter:description" content={post.description} />
+            <meta property="twitter:image" content={`https://cxdeployer.com${post.titleImage}`} />
+      </MetaTags>
         <br />
         <div class="container">
           <div class="row ">

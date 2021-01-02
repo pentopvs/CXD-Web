@@ -9,33 +9,6 @@ import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import Logo from "../assets/Home/logo.png";
 import "../index.css";
-// const Collapse = ({ question, answer, id }) => (
-//   <div className="accordion" id="accordionExample">
-//     <div className="card">
-//       <div className="card-header" id="headingOne">
-//         <h2
-//           className="mb-0 c-pointer"
-//           data-toggle="collapse"
-//           data-target={`#question${id}`}
-//           aria-expanded="true"
-//           aria-controls="collapseOne"
-//         >
-//           <button className="btn" type="button">
-//             {question}
-//           </button>
-//         </h2>
-//       </div>
-//       <div
-//         id={`question${id}`}
-//         className="collapse"
-//         aria-labelledby="headingOne"
-//         data-parent="#accordionExample"
-//       >
-//         <div className="card-body">{answer}</div>
-//       </div>
-//     </div>
-//   </div>
-// );
 
 export default () => {
   const [isYearly, setIsYearly] = useState(true);
@@ -53,14 +26,51 @@ export default () => {
           User Journey Map | Service Blueprint | Forever Free | CXDeployer
         </title>
         <meta
+          name="title"
+          content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"
+        />
+        <meta
           name="description"
+          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta
+          property="og:description"
           content="Lifetime free. Affordable pricing for individuals, small and large organizations"
         />
         <meta
           property="og:title"
           content="User Journey Map | Service Blueprint | Forever Free | CXDeployer"
         />
-        <meta property="og:image" content={Logo} />
+
+        <meta
+          property="og:title"
+          content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer "
+        />
+        <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
+        <meta property="og:url" content="https://cxdeployer.com/pricing" />
+
+        {/* <!-- Twitter -- /> */}
+        <meta
+          property="twitter:description"
+          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+        />
+        <meta
+          property="twitter:title"
+          content="User Journey Map | Service Blueprint | Forever Free | CXDeployer"
+        />
+        <meta
+          property="twitter:image"
+          content={`https://cxdeployer.com${Logo}`}
+        />
+        <meta property="twitter:url" content="https://cxdeployer.com/pricing" />
+
+        <meta property="twitter:card" content="CXdeployer" />
+        <meta
+          property="twitter:description"
+          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+        />
       </MetaTags>
 
       <div className="container mt-5">
