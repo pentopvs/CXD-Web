@@ -36,6 +36,11 @@ export default () => {
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta
+          property="og:site_name"
+          content="cxdeployer.com"
+        />
+        <meta property="og:url" content="https://cxdeployer.com/pricing" />
+        <meta
           property="og:description"
           content="Lifetime free. Affordable pricing for individuals, small and large organizations"
         />
@@ -43,13 +48,7 @@ export default () => {
           property="og:title"
           content="User Journey Map | Service Blueprint | Forever Free | CXDeployer"
         />
-
-        <meta
-          property="og:title"
-          content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer "
-        />
         <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
-        <meta property="og:url" content="https://cxdeployer.com/pricing" />
 
         {/* <!-- Twitter -- /> */}
         <meta
@@ -145,10 +144,10 @@ export default () => {
                   {/* <span className="period">/month</span> */}
                 </h6>
                 <div className="text-center">
-                  <small>&nbsp;(no monthly fee fever)</small>
+                  <small>&nbsp;(no monthly fee ever)</small>
                 </div>
                 <a
-                  href="https://app.cxdeployer.com/"
+                  href="https://cxdeployer.com/createpayment/5ff0686f782bb714f1598430"
                   target="_blank"
                   without
                   rel="noopener noreferrer"
@@ -324,9 +323,9 @@ export default () => {
                 </div>
 
                 <h6 className="card-price text-center pt-2">
-                  <div className="h5 my-4 py-2">Contact us for the quote</div>
+                  <div style={{fontSize:'23px'}} className="mt-3 mb-4 py-2">Contact us for the quote</div>
                 </h6>
-                <Link className="btn btn-block btn-first text-uppercase mt-4">
+                <Link className="btn btn-block btn-first text-uppercase mt-4" to="/contactus">
                   Contact us
                 </Link>
                 {/* <div className="pt-3 text-center">
