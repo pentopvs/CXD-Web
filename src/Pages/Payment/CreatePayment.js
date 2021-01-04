@@ -60,7 +60,7 @@ export default class CreatePayment extends Component {
     console.log(body);
     axios
       .post(
-        "https:// app.cxdeployer.com/api/admin/stripe/payment/",
+        "https://app.cxdeployer.com/api/admin/stripe/payment/",
         body
       )
       .then((res) => {
