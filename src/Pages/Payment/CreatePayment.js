@@ -502,7 +502,7 @@ export default class CreatePayment extends Component {
                 </div>
               </div>
               <StripeCheckout
-                stripeKey="pk_live_51HzeKULCEpd65swkRql1zlYWU04ZyPcHxtxEWelqlnIMUW5jDkop189FZl2dlBlaYarw4XpAf0PVuFhCiaTg8i0U00qzUKi6IL"
+                stripeKey="pk_test_51HzeKULCEpd65swkmCDA73B1S31FodnQBeKVqurugHtDqsCRdnn4HNCnjn6T0h8zMysmLmRM3PdRpXMxlDqiC7Xa00s6JVgk68"
                 token={this.makePayment}
                 name="Subscribe Now"
                 // amount={
