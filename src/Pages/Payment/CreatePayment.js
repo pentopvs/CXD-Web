@@ -63,10 +63,26 @@ export default class CreatePayment extends Component {
       .post("https://app.cxdeployer.com/api/admin/stripe/payment/", body)
       .then((res) => {
         console.log(res);
-        alert(res.data.msg);
+        alert(res.data.message);
       })
-      .catch((err) => {
-        alert(err);
+      .catch((error) => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          alert(error.response.data.message);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error", error.message);
+        }
+        console.log(error.config);
       });
   };
   validateCoupon = () => {
@@ -120,9 +136,27 @@ export default class CreatePayment extends Component {
     axios
       .post(`https://app.cxdeployer.com/api/admin/stripe/paypal/payment`, data)
       .then((res) => {
-        alert(res.data.msg);
+        alert(res.data.message);
       })
-      .catch((err) => alert(err));
+      .catch((error) => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          alert(error.response.data.message);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error", error.message);
+        }
+        console.log(error.config);
+      });
 
     // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
   };
@@ -414,8 +448,8 @@ export default class CreatePayment extends Component {
                     "Vatican",
                     "Venezuela",
                     "Vietnam",
-                    "wales",
-                    "welsh",
+                    "Wales",
+
                     "Yemen",
                     "Zambia",
                     "Zimbabwe",
