@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { parse } from "uuid";
+import PaypalExpressBtn from "react-paypal-express-checkout";
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 export default class CreatePayment extends Component {
@@ -61,10 +62,11 @@ export default class CreatePayment extends Component {
     axios
       .post("https://app.cxdeployer.com/api/admin/stripe/payment/", body)
       .then((res) => {
+        console.log(res);
         alert(res.data.msg);
       })
       .catch((err) => {
-        console.log(err);
+        alert(err);
       });
   };
   validateCoupon = () => {
@@ -89,6 +91,55 @@ export default class CreatePayment extends Component {
         console.log(err);
       });
   };
+  onSuccess = (payment, total) => {
+    // Congratulation, it came here means everything's fine!
+
+    let data = {
+      payment: {
+        amount: total,
+
+        cancelled: payment.cancelled,
+        email: payment.email,
+        paid: payment.paid,
+        payerID: payment.payerID,
+        paymentID: payment.paymentID,
+        paymentToken: payment.paymentToken,
+        returnUrl: payment.returnUrl,
+      },
+      product: {
+        planId: this.props.match.params.planid,
+        firstName: this.state.fname,
+        lastName: this.state.lname,
+        email: this.state.email,
+        couponCode: this.state.couponCode,
+        country: this.state.country,
+      },
+    };
+
+    console.log("The payment was succeeded!", payment);
+    axios
+      .post(`https://app.cxdeployer.com/api/admin/stripe/paypal/payment`, data)
+      .then((res) => {
+        alert(res.data.msg);
+      })
+      .catch((err) => alert(err));
+
+    // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
+  };
+  onCancel = (data) => {
+    // User pressed "cancel" or close Paypal's popup!
+    console.log("The payment was cancelled!", data);
+    alert("The payment was cancelled!");
+    // You can bind the "data" object's value to your state or props or whatever here, please see below for sample returned data
+  };
+
+  onError = (err) => {
+    // The main Paypal's script cannot be loaded or somethings block the loading of that script!
+    console.log("Error!", err);
+    alert("Internal Server Error");
+    // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
+    // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
+  };
   render() {
     let {
       INR,
@@ -106,6 +157,13 @@ export default class CreatePayment extends Component {
     let tax = ((parseFloat(INR) - parseFloat(INR) * discount) * 0.18).toFixed(
       2
     );
+    let env = "production";
+    const client = {
+      sandbox:
+        "ASiugEW4Jwn9OqSqTzI4chSPzfY-Bv3nA6nVUYE63ERPtoPwvvxTNnCsYiKzG-ebkk_biw-QzUhrULEi",
+      production:
+        "AUjh7o7-DtZiwWrR2FeuT8R4LB1Dw7hCmdUVRodv3SMX-bEUZTDZ0ockAnFungJWfhwkIZmP5xr3ptF2",
+    };
     return (
       <div className="pt-5">
         <div className="container">
@@ -501,6 +559,51 @@ export default class CreatePayment extends Component {
                   </div>
                 </div>
               </div>
+              {plan.validity != "Monthly" ? (
+                <PaypalExpressBtn
+                  env={env}
+                  client={client}
+                  currency={country == "India" ? "INR" : "USD"}
+                  total={
+                    country != "India"
+                      ? (parseFloat(USD) - parseFloat(USD) * discount).toFixed(
+                          2
+                        )
+                      : (
+                          parseFloat(INR) -
+                          parseFloat(INR) * discount +
+                          parseFloat(tax)
+                        ).toFixed(2)
+                  }
+                  onError={this.onError}
+                  onSuccess={(payment) =>
+                    this.onSuccess(
+                      payment,
+                      country != "India"
+                        ? (
+                            parseFloat(USD) -
+                            parseFloat(USD) * discount
+                          ).toFixed(2)
+                        : (
+                            parseFloat(INR) -
+                            parseFloat(INR) * discount +
+                            parseFloat(tax)
+                          ).toFixed(2)
+                    )
+                  }
+                  onCancel={this.onCancel}
+                  disabled={
+                    this.state.plan.length == 0 ||
+                    terms === "" ||
+                    fname == "" ||
+                    lname == "" ||
+                    country == ""
+                  }
+                  style={{ shape: "rect", size: "medium" }}
+                />
+              ) : (
+                ""
+              )}
               <StripeCheckout
                 stripeKey="pk_live_51HzeKULCEpd65swkRql1zlYWU04ZyPcHxtxEWelqlnIMUW5jDkop189FZl2dlBlaYarw4XpAf0PVuFhCiaTg8i0U00qzUKi6IL"
                 token={this.makePayment}
