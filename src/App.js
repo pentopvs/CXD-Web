@@ -11,6 +11,7 @@ import {
   Features,
 } from "./Pages";
 import CreatePayment from "./Pages/Payment/CreatePayment";
+import AppSumo from "./Pages/Payment/AppSumo/AppSumo";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; // very important for Routing
 import AllBlogs from "./Pages/Blog/AllBlogs";
 import Blog from "./Pages/Blog/Blog";
@@ -33,7 +34,7 @@ function App() {
             <Route path="/features" component={Features} />
             <Route path="/blogs" component={AllBlogs} />
             <Route path="/createpayment/:planid" component={CreatePayment} />
-            {/* <Route path="/blog/:slug" component={Blog} />*/}
+            <Route path="/appsumo" component={AppSumo} />
           </Switch>
           <Footer />
         </ScrollToTop>

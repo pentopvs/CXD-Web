@@ -4,6 +4,7 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { parse } from "uuid";
 import PaypalExpressBtn from "react-paypal-express-checkout";
+import ReactPaypal from "./Paypal";
 
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 export default class CreatePayment extends Component {
@@ -114,13 +115,7 @@ export default class CreatePayment extends Component {
       payment: {
         amount: total,
 
-        cancelled: payment.cancelled,
-        email: payment.email,
-        paid: payment.paid,
-        payerID: payment.payerID,
-        paymentID: payment.paymentID,
-        paymentToken: payment.paymentToken,
-        returnUrl: payment.returnUrl,
+        payment,
       },
       product: {
         planId: this.props.match.params.planid,
@@ -186,6 +181,7 @@ export default class CreatePayment extends Component {
       lname,
       couponMsg,
       terms,
+      email,
     } = this.state;
     discount = parseFloat(discount) / 100;
     let tax = ((parseFloat(INR) - parseFloat(INR) * discount) * 0.18).toFixed(
@@ -207,7 +203,7 @@ export default class CreatePayment extends Component {
                 <input
                   class="form-control mr-1"
                   type="text"
-                  placeholder="First Name"
+                  placeholder="First Name*"
                   name="fname"
                   onChange={(e) => this.handleChange(e)}
                   required
@@ -215,7 +211,7 @@ export default class CreatePayment extends Component {
                 <input
                   class="form-control"
                   type="text"
-                  placeholder="Last Name"
+                  placeholder="Last Name*"
                   name="lname"
                   onChange={(e) => this.handleChange(e)}
                   required
@@ -225,13 +221,16 @@ export default class CreatePayment extends Component {
                 <input
                   class="form-control mr-1  mb-1"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email*"
                   name="email"
                   onChange={(e) => this.handleChange(e)}
                   required
                 ></input>
-                <small class="text-danger float-left  mb-1">
-                  Note: Login Credentials will be sent to this email id
+                <small class="text-danger float-left text-left  mb-1">
+                  Note: Login Credentials will be sent to this email id. Please
+                  ensure to check your email's spam folder, sometimes email may
+                  land there. If you have already signed-up, your account will
+                  be upgraded.
                 </small>
               </div>
               <div class="form-group mt-2">
@@ -242,7 +241,7 @@ export default class CreatePayment extends Component {
                   required
                   value={this.state.country}
                 >
-                  <option value="">Select Your Country</option>
+                  <option value="">Select Your Country*</option>
                   {[
                     "Afghanistan",
                     "Albania",
@@ -576,6 +575,7 @@ export default class CreatePayment extends Component {
                       className="form-control"
                       required
                       name="terms"
+                      id="check"
                       onChange={(e) => this.handleChange(e)}
                       style={{ width: "15px", height: "15px" }}
                     />
@@ -593,8 +593,7 @@ export default class CreatePayment extends Component {
                   </div>
                 </div>
               </div>
-              {plan.validity != "Monthly" ? (
-                <PaypalExpressBtn
+              {/*<PaypalExpressBtn
                   env={env}
                   client={client}
                   currency={country == "India" ? "INR" : "USD"}
@@ -634,32 +633,88 @@ export default class CreatePayment extends Component {
                     country == ""
                   }
                   style={{ shape: "rect", size: "medium" }}
-                />
-              ) : (
-                ""
-              )}
-              <StripeCheckout
-                stripeKey="pk_live_51HzeKULCEpd65swkRql1zlYWU04ZyPcHxtxEWelqlnIMUW5jDkop189FZl2dlBlaYarw4XpAf0PVuFhCiaTg8i0U00qzUKi6IL"
-                token={this.makePayment}
-                name="Subscribe Now"
-                // amount={
-                //   country != "India" ? USD : (INR + INR * 0.18).toFixed(2)
-                // }
-              >
-                <button
-                  class="btn btn-dark"
-                  type="button"
-                  disabled={
-                    this.state.plan.length == 0 ||
-                    terms === "" ||
-                    fname == "" ||
-                    lname == "" ||
-                    country == ""
-                  }
+                />*/}
+              {this.state.plan.length == 0 ||
+              terms === "" ||
+              fname == "" ||
+              lname == "" ||
+              country == "" ||
+              email == "" ? (
+                <StripeCheckout
+                  stripeKey="pk_live_51HzeKULCEpd65swkRql1zlYWU04ZyPcHxtxEWelqlnIMUW5jDkop189FZl2dlBlaYarw4XpAf0PVuFhCiaTg8i0U00qzUKi6IL"
+                  token={this.makePayment}
+                  name="Subscribe Now"
+                  // amount={
+                  //   country != "India" ? USD : (INR + INR * 0.18).toFixed(2)
+                  // }
                 >
-                  <i class="fa fa-credit-card"></i> Debit or Credit Card
-                </button>
-              </StripeCheckout>
+                  <button
+                    class="btn btn-dark btn-block"
+                    type="button"
+                    disabled={
+                      this.state.plan.length == 0 ||
+                      terms === "" ||
+                      fname == "" ||
+                      lname == "" ||
+                      country == "" ||
+                      email == ""
+                    }
+                  >
+                    <i class="fa fa-credit-card"></i> Debit or Credit Card
+                  </button>
+                </StripeCheckout>
+              ) : (
+                <React.Fragment>
+                  {" "}
+                  {plan.hasOwnProperty("validity") &&
+                  plan.validity != "Monthly" ? (
+                    <ReactPaypal
+                      currency={country == "India" ? "INR" : "USD"}
+                      total={
+                        country != "India"
+                          ? (
+                              parseFloat(USD) -
+                              parseFloat(USD) * discount
+                            ).toFixed(2)
+                          : (
+                              parseFloat(INR) -
+                              parseFloat(INR) * discount +
+                              parseFloat(tax)
+                            ).toFixed(2)
+                      }
+                      onSuccess={this.onSuccess}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <hr></hr>
+                  <div class="p-1">
+                    <StripeCheckout
+                      stripeKey="pk_live_51HzeKULCEpd65swkRql1zlYWU04ZyPcHxtxEWelqlnIMUW5jDkop189FZl2dlBlaYarw4XpAf0PVuFhCiaTg8i0U00qzUKi6IL"
+                      token={this.makePayment}
+                      name="Subscribe Now"
+                      // amount={
+                      //   country != "India" ? USD : (INR + INR * 0.18).toFixed(2)
+                      // }
+                    >
+                      <button
+                        class="btn btn-dark btn-block"
+                        type="button"
+                        disabled={
+                          this.state.plan.length == 0 ||
+                          terms === "" ||
+                          fname == "" ||
+                          lname == "" ||
+                          country == "" ||
+                          email == ""
+                        }
+                      >
+                        <i class="fa fa-credit-card"></i> Debit or Credit Card
+                      </button>
+                    </StripeCheckout>
+                  </div>
+                </React.Fragment>
+              )}
               {/*<div class="collapse" id="collapseExample">
               <CardElements />
     </div>*/}

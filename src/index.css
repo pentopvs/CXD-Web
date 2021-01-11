@@ -378,14 +378,11 @@ input:checked + .slider:before {
 }
 
 /* Home carousel */
-@media screen 
-  and (min-width: 1624px)
-{
-    .carousel-div{
-      height: 100vh !important;
-    }
+@media screen and (min-width: 1624px) {
+  .carousel-div {
+    height: 100vh !important;
+  }
 }
-
 
 .priceList > li {
   list-style: disc;
