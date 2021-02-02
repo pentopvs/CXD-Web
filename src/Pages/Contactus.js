@@ -45,7 +45,7 @@ export default () => {
               <p className="mt-0 text-muted"> Working hours: 8:00am - 3:00pm</p>
               <a
                 rel="noopener noreferrer"
-                href="https://api.whatsapp.com/send?phone=+919669911101"
+                href="https://api.whatsapp.com/send?phone=+971562258664"
                 target="_blank"
                 class="btn btn-first mt-4"
               >
