@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState,useEffect } from "react";
 import CookieConsent from "react-cookie-consent";
 import Carousel from "./Sections/Carousel";
 import Benefits from "./Sections/Benefits";
@@ -10,11 +10,41 @@ import AboveFooter from "./Sections/AboveFooter";
 import CarouselNew from "./Sections/CarouselNew";
 import MetaTags from 'react-meta-tags';
 import Logo from '../../assets/Home/logo.png';
-export default class extends Component {
-  render = () => {
+import {Modal} from 'react-bootstrap'
+import Offermodal from '../../Components/Navbar/Offermodal.js'
+export default function Home() {
+  const [popupModal,setPopupModal] = useState(false)
+  
+    const popupModalHandle =()=>{
+      setPopupModal(true)
+
+    }
+    useEffect(()=>{
+      window.onload = popupModalHandle()
+
+    },[])
     return (
+      
       <div>
-      <div className="wrapper">
+        {/* <Modal size="lg" centered style={{width:'50%',marginLeft:'25%'}} show={popupModal} onHide={() => setPopupModal(false)}>
+      <Modal.Header closeButton>
+        
+        </Modal.Header>
+      <Modal.Body >
+        <div>
+
+        <a href="https://crozdesk.com/customer-service-crm/customer-experience-software/top-list" target="_blank" title="Top Customer Experience Software on Crozdesk 2020">
+  <img src="https://crozdesk.com/infographics/customer-experience-software-2020/embed" style={{width:'fit-content',marginRight:10}} width="1070"  border="0" alt="Top 20 Customer Experience Software of 2020 Infographic" />
+</a>
+
+        </div>
+      
+
+        
+      </Modal.Body>
+      
+    </Modal> */}
+      <div className="wrapper" o >
           <MetaTags>
             <title>Customer Journey Mapping | Ideation Management | Task Management – CXDeployer </title>
             <meta name="title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer "/>
@@ -61,6 +91,7 @@ export default class extends Component {
             <AboveFooter />
           </div>
         </div>
+        <Offermodal open={popupModal} />
         <CookieConsent
           location="bottom"
           buttonText="I accept"
@@ -82,4 +113,4 @@ export default class extends Component {
       </div>
     );
   };
-}
+
