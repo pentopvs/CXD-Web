@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.0bf4e4e0.chunk.css",
-    "main.js": "/static/js/main.5cb4eb98.chunk.js",
-    "main.js.map": "/static/js/main.5cb4eb98.chunk.js.map",
+    "main.css": "/static/css/main.e38e1edb.chunk.css",
+    "main.js": "/static/js/main.5b4431af.chunk.js",
+    "main.js.map": "/static/js/main.5b4431af.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5989d73b.js",
     "runtime-main.js.map": "/static/js/runtime-main.5989d73b.js.map",
-    "static/js/2.c5e0c629.chunk.js": "/static/js/2.c5e0c629.chunk.js",
-    "static/js/2.c5e0c629.chunk.js.map": "/static/js/2.c5e0c629.chunk.js.map",
+    "static/js/2.b9c3d6cb.chunk.js": "/static/js/2.b9c3d6cb.chunk.js",
+    "static/js/2.b9c3d6cb.chunk.js.map": "/static/js/2.b9c3d6cb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e2302f8af77625ce89e138de329f4e86.js": "/precache-manifest.e2302f8af77625ce89e138de329f4e86.js",
+    "precache-manifest.a80c7c793f72e4b17447b6935619452c.js": "/precache-manifest.a80c7c793f72e4b17447b6935619452c.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.0bf4e4e0.chunk.css.map": "/static/css/main.0bf4e4e0.chunk.css.map",
-    "static/js/2.c5e0c629.chunk.js.LICENSE.txt": "/static/js/2.c5e0c629.chunk.js.LICENSE.txt",
+    "static/css/main.e38e1edb.chunk.css.map": "/static/css/main.e38e1edb.chunk.css.map",
+    "static/js/2.b9c3d6cb.chunk.js.LICENSE.txt": "/static/js/2.b9c3d6cb.chunk.js.LICENSE.txt",
     "static/media/Audit-log.png": "/static/media/Audit-log.2e591283.png",
     "static/media/Benifit1.svg": "/static/media/Benifit1.db2bb398.svg",
     "static/media/Benifit2.svg": "/static/media/Benifit2.f9b0bfd0.svg",
@@ -51,6 +51,7 @@
     "static/media/Post-new-idea.png": "/static/media/Post-new-idea.6459003e.png",
     "static/media/as-appsumo-logo-blk.png": "/static/media/as-appsumo-logo-blk.18543264.png",
     "static/media/connected-maps.png": "/static/media/connected-maps.7e91ea52.png",
+    "static/media/cxdeployer.jpeg": "/static/media/cxdeployer.de86512d.jpeg",
     "static/media/enterprise.svg": "/static/media/enterprise.cbc20d3f.svg",
     "static/media/free.svg": "/static/media/free.760f1b1c.svg",
     "static/media/growth.svg": "/static/media/growth.49f41529.svg",
@@ -69,8 +70,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5989d73b.js",
-    "static/js/2.c5e0c629.chunk.js",
-    "static/css/main.0bf4e4e0.chunk.css",
-    "static/js/main.5cb4eb98.chunk.js"
+    "static/js/2.b9c3d6cb.chunk.js",
+    "static/css/main.e38e1edb.chunk.css",
+    "static/js/main.5b4431af.chunk.js"
   ]
 }
