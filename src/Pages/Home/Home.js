@@ -11,7 +11,7 @@ import CarouselNew from "./Sections/CarouselNew";
 import MetaTags from 'react-meta-tags';
 import Logo from '../../assets/Home/logo.png';
 import {Modal} from 'react-bootstrap'
-import Offermodal from '../../Components/Navbar/Offermodal.js'
+//import Offermodal from '../../Components/Navbar/Offermodal.js'
 export default function Home() {
   const [popupModal,setPopupModal] = useState(false)
   
@@ -20,7 +20,7 @@ export default function Home() {
 
     }
     useEffect(()=>{
-      window.onload = popupModalHandle()
+    //  window.onload = popupModalHandle()
 
     },[])
     return (
@@ -91,7 +91,7 @@ export default function Home() {
             <AboveFooter />
           </div>
         </div>
-        <Offermodal open={popupModal} />
+ //       <Offermodal open={popupModal} />
         <CookieConsent
           location="bottom"
           buttonText="I accept"
