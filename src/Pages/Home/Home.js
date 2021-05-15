@@ -20,44 +20,23 @@ export default function Home() {
 
     }
     useEffect(()=>{
-    //  window.onload = popupModalHandle()
 
     },[])
     return (
-      
       <div>
-        {/* <Modal size="lg" centered style={{width:'50%',marginLeft:'25%'}} show={popupModal} onHide={() => setPopupModal(false)}>
-      <Modal.Header closeButton>
-        
-        </Modal.Header>
-      <Modal.Body >
-        <div>
-
-        <a href="https://crozdesk.com/customer-service-crm/customer-experience-software/top-list" target="_blank" title="Top Customer Experience Software on Crozdesk 2020">
-  <img src="https://crozdesk.com/infographics/customer-experience-software-2020/embed" style={{width:'fit-content',marginRight:10}} width="1070"  border="0" alt="Top 20 Customer Experience Software of 2020 Infographic" />
-</a>
-
-        </div>
-      
-
-        
-      </Modal.Body>
-      
-    </Modal> */}
       <div className="wrapper" o >
           <MetaTags>
             <title>Customer Journey Mapping | Ideation Management | Task Management – CXDeployer </title>
             <meta name="title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer "/>
             <meta name="description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management."/>
 
-            {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website"/>
             <meta property="og:description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management." />
             <meta property="og:title" content="Customer Journey Mapping | Ideation Management | Task Management – CXDeployer " />
             <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
             <meta property="og:url" content="https://cxdeployer.com/" />
 
-            {/* <!-- Twitter -- /> */}
+
             <meta property="twitter:card" content="CXdeployer" />
             <meta property="twitter:url" content="https://cxdeployer.com/" />
             <meta property="twitter:description" content="World’s 1st integrated customer experience management solution to design persona, empathy, and journey maps. Experience Innovation and execution management." />
@@ -91,7 +70,6 @@ export default function Home() {
             <AboveFooter />
           </div>
         </div>
- //       <Offermodal open={popupModal} />
         <CookieConsent
           location="bottom"
           buttonText="I accept"
