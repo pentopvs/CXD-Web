@@ -34,7 +34,7 @@ export default function HomeBlogCard({ blog }) {
       item
       xs={12}
       sm={5}
-      lg={3}
+      lg={4}
       className={`${classes.blogCard} mx-4 my-3 rounded-lg`}
     >
       <Link
