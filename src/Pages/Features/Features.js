@@ -8,13 +8,14 @@ import Img5 from "../../assets/Features/Edit-Idea.png";
 import Img6 from "../../assets/Features/Post-new-idea.png";
 import Logo from "../../assets/Home/logo.png";
 import MetaTags from 'react-meta-tags';
+import {Helmet} from 'react-helmet';
 
 
 export default () => {
   return (
     <div className=" pt-5 bg-features">
          <div className="wrapper">
-          <MetaTags>
+          <Helmet>
             <title>Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
             <meta name="title" content="Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
             <meta name="description" content="Manage CX transformation program and achieve customer experience excellence"/>
@@ -33,7 +34,7 @@ export default () => {
             <meta property="twitter:description" content="Manage CX transformation program and achieve customer experience excellence" />
             <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`}   />
 
-          </MetaTags>
+          </Helmet>
         </div>
       <div className="intro-text text-center py-md-5 mb-5 p-5">
         <div className="intro-desc mb-0">

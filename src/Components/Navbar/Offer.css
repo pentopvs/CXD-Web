@@ -4,3 +4,9 @@
   bottom: 0 !important;
   right: 0 !important;
 }
+
+.navbar{
+  position: fixed;
+}
+
+.navbar-nav > li > .dropdown-menu { background-color: #00041f; }

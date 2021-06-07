@@ -3,9 +3,11 @@ import { getBlogs } from "../../Api";
 import HomeBlogCard from "./HomeBlogCard";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags";
+import MetaTagsServer from "react-meta-tags/server";
+import { MetaTagsContext } from "react-meta-tags";
 import Logo from '../../assets/Home/logo.png';
-
+import {Helmet} from 'react-helmet';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -31,8 +33,8 @@ export default function AllBlogs() {
     fetchBlogs();
   }, []);
   return (
-    <div className="pt-3">
-      <MetaTags>
+    <div className="pt-5">
+      <Helmet>
         <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
             <meta name="title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
             <meta name="description" content="Manage CX transformation program and achieve customer experience excellence"/>
@@ -52,9 +54,9 @@ export default function AllBlogs() {
             <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`}   />
 
 
-      </MetaTags>
+      </Helmet>
 
-      <div className="container">
+      <div className="container pt-5">
         <div className="container font-weight-bolder ml-4 text-left mb-3">
           <h1>All Blogs</h1>
         </div>

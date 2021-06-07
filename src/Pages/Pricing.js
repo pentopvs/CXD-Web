@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
 import $ from "jquery";
-import Free from "../assets/Pricing/free.svg";
-import Startup from "../assets/Pricing/startup.svg";
-import Growth from "../assets/Pricing/growth.svg";
-import Enterprise from "../assets/Pricing/enterprise.svg";
+// import Free from "../assets/Pricing/free.svg";
+// import Startup from "../assets/Pricing/startup.svg";
+// import Growth from "../assets/Pricing/growth.svg";
+// import Enterprise from "../assets/Pricing/enterprise.svg";
 import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet";
 import Logo from "../assets/Home/logo.png";
 import "../index.css";
 
@@ -21,7 +22,7 @@ export default () => {
       id="pricinghome"
       style={{ color: isYearly ? "col1" : "col2" }}
     >
-      <MetaTags>
+      <Helmet>
         <title>
           User Journey Map | Service Blueprint | Forever Free | CXDeployer
         </title>
@@ -31,10 +32,10 @@ export default () => {
         />
         <meta
           name="description"
-          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+          content="ABCD Lifetime free. Affordable pricing for individuals, small and large organizations"
         />
 
-        {/* <!-- Open Graph / Facebook --> */}
+
         <meta
           property="og:site_name"
           content="cxdeployer.com"
@@ -42,7 +43,7 @@ export default () => {
         <meta property="og:url" content="https://cxdeployer.com/pricing" />
         <meta
           property="og:description"
-          content="Lifetime free. Affordable pricing for individuals, small and large organizations"
+          content="ABCD Lifetime free. Affordable pricing for individuals, small and large organizations"
         />
         <meta
           property="og:title"
@@ -50,7 +51,6 @@ export default () => {
         />
         <meta property="og:image" content={`https://cxdeployer.com${Logo}`} />
 
-        {/* <!-- Twitter -- /> */}
         <meta
           property="twitter:description"
           content="Lifetime free. Affordable pricing for individuals, small and large organizations"
@@ -70,9 +70,9 @@ export default () => {
           property="twitter:description"
           content="Lifetime free. Affordable pricing for individuals, small and large organizations"
         />
-      </MetaTags>
+      </Helmet>
 
-      <div className="container mt-5">
+      <div className="container mt-5 pt-5">
         <div className="h3  pricing-lead-fourth text-center">
           <font color=" #999999">CXDeployer</font>
         </div>
@@ -127,7 +127,7 @@ export default () => {
           <div className="card-deck">
             <div className="card mb-5 mb-lg-0">
               <div className="card-body">
-                <img src={Free} className="card-img-top  p-3" alt="..." />
+                {/* <img src={Free} className="card-img-top  p-3" alt="..." /> */}
                 <h5 className="card-title text-muted text-uppercase text-center">
                   Life time
                 </h5>
@@ -184,7 +184,7 @@ export default () => {
             </div>
             <div className="card mb-5 mb-lg-0">
               <div className="card-body">
-                <img src={Startup} className="card-img-top  p-3" alt="..." />
+                {/* <img src={Startup} className="card-img-top  p-3" alt="..." /> */}
                 <h5 className="card-title text-muted text-uppercase text-center">
                   Startup
                 </h5>
@@ -246,7 +246,7 @@ export default () => {
             </div>
             {/* Plus Tier */}
             <div className="card mb-5 mb-lg-0">
-              <img src={Growth} className="card-img-top  p-3" alt="..." />
+              {/* <img src={Growth} className="card-img-top  p-3" alt="..." /> */}
               <div className="card-body">
                 <h5 className="card-title text-muted text-uppercase text-center">
                   Growth
@@ -309,7 +309,7 @@ export default () => {
             </div>
             {/* Pro Tier */}
             <div className="card">
-              <img src={Enterprise} className="card-img-top p-3" alt="..." />
+              {/* <img src={Enterprise} className="card-img-top p-3" alt="..." /> */}
               <div className="card-body">
                 <h5 className="card-title text-muted text-uppercase text-center">
                   Enterprise

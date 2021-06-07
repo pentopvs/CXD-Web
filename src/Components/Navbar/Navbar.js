@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Logo1 from "../../assets/Logo1.png";
 import { Link } from "react-router-dom";
+import './Offer.css';
 import Offermodal from "./Offermodal";
 
 const $ = window.$;
@@ -24,7 +25,7 @@ export default () => {
       $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         if (
           location.pathname.replace(/^\//, "") ===
-            this.pathname.replace(/^\//, "") &&
+          this.pathname.replace(/^\//, "") &&
           location.hostname === this.hostname
         ) {
           var target = $(this.hash);
@@ -85,14 +86,52 @@ export default () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarResponsive">
-          <ul className="navbar-nav text-uppercase ml-auto">
+          <ul className="navbar-nav text-uppercase ml-auto" >
             {/* <li className="nav-item">
 						<a className="nav-link js-scroll-trigger" href="#benefits">Benefits</a>
 					</li> */}
-            <li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/features">
-                Features
-              </Link>
+            <li className="nav-item dropdown" >
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" >Products 
+              <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <Link className="nav-link js-scroll-trigger black-text" to="/cjm">
+                    Journey Maps
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link js-scroll-trigger black-text" to="/persona">
+                    Personas
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link js-scroll-trigger black-text" to="/empathy">
+                    Empathy Maps
+                  </Link>
+                </li>
+                <li >
+                  <Link className="nav-link js-scroll-trigger black-text" to="/bmc">
+                    Business Model Canvas
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link className="nav-link js-scroll-trigger black-text" to="/idea">
+                    Idea Management
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link js-scroll-trigger black-text" to="/task">
+                    Task Management
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link js-scroll-trigger" to="/features">
+                    All Features
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li className="nav-item">
               <Link className="nav-link js-scroll-trigger" to="/pricing">
@@ -100,7 +139,7 @@ export default () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/blogs">
+              <Link className="nav-link js-scroll-trigger" to="/blog">
                 Blog
               </Link>
             </li>

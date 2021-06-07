@@ -12,6 +12,8 @@ import Slider2 from "../../../assets/Home/slider2.jpg";
 import Slider3 from "../../../assets/Home/slider3.png";
 import Slider4 from "../../../assets/Home/slider4.png";
 import { Grid } from "@material-ui/core";
+// import { MagnificPopup } from 'react-magnific-popup'
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import "../../../index.css";
 // Gradient
 // #0a1d44 top
@@ -21,6 +23,21 @@ import "../../../index.css";
 // 951
 
 export default () => {
+  const handleOpenModal=()=>{
+    let mymodal = document.getElementById("modalPopup")
+    mymodal.style.display = "block"
+  }
+  
+  // $( document ).ready(function() {
+  //   $('#headerVideoLink').magnificPopup({
+  //    type:'inline',
+  //    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  //  });
+     
+  //  });
+  // let popup = document.getElementById("headerPopup")
+
+  
   return (
     <div
       id="carouselExampleIndicators"
@@ -38,9 +55,7 @@ export default () => {
         <li data-target="#carouselExampleIndicators" data-slide-to={3} />
       </ol>
       <div className="carousel-inner">
-        <div
-          className="carousel-item rounded active"
-        >
+        <div className="carousel-item rounded active">
           <Grid
             container
             direction="row"
@@ -50,7 +65,12 @@ export default () => {
             xs={11}
           >
             <Grid item sm={12} lg={6} className="d-lg-none text-center">
-              <img src={Banner1Sm} alt="" style={{width:'100%'}} className="img-fluid mx-auto" />
+              <img
+                src={Banner1Sm}
+                alt=""
+                style={{ width: "100%" }}
+                className="img-fluid mx-auto"
+              />
             </Grid>
             <Grid item md={12} lg={4}>
               <div className="intro-text p-md-5">
@@ -69,7 +89,7 @@ export default () => {
                     improve customer experience.
                   </font>
                 </div>
-                <div style={{ textAlign: "center" }}>
+                <div className="row" style={{alignItems:'center'}}>
                   <a
                     rel="noopener noreferrer"
                     href="https://app.cxdeployer.com/#/"
@@ -79,9 +99,18 @@ export default () => {
                   >
                     <font color="white">Try for free</font>
                   </a>
-                  <p>
-                    <small className="text-white">No Credit Card Required!</small>
-                  </p>
+                  <div onClick={handleOpenModal} className="row text-center ml-3 how_it_works" style={{cursor:'pointer',alignItems:'center',textDecoration:'none'}}    >
+                    <PlayCircleOutlineIcon
+                    
+                      style={{ width: "20px", height: "20px" ,color:"white",cursor:'pointer'}}
+                    />
+                    <p className="ml-1 text-white " style={{marginTop:'13px',cursor:'pointer'}}>How it works</p>
+                  </div>
+                  {/* <p>
+                    <small className="text-white">
+                      No Credit Card Required!
+                    </small>
+                  </p> */}
                 </div>
               </div>
             </Grid>
@@ -92,21 +121,18 @@ export default () => {
               justify="center"
               alignItems="center"
               lg={8}
-              className="d-none d-lg-block text-center" 
+              className="d-none d-lg-block text-center"
             >
               <img
                 src={Banner1Sm}
                 alt=""
-                style={{minWidth:'400px',width:'100%'}}
+                style={{ minWidth: "400px", width: "100%" }}
                 className="img-fluid mx-auto"
               />
             </Grid>
           </Grid>
         </div>
-        <div
-          className="carousel-item rounded"
-
-        >
+        <div className="carousel-item rounded">
           <Grid
             container
             direction="row"
@@ -138,7 +164,7 @@ export default () => {
                     real-time for mapping persona, empathy and customer journey.
                   </font>
                 </div>
-                <div style={{ textAlign: "center" }}>
+                <div className="row" style={{alignItems:'center'}}>
                   <a
                     rel="noopener noreferrer"
                     href="https://app.cxdeployer.com/#/"
@@ -148,9 +174,18 @@ export default () => {
                   >
                     <font color="white">Try for free</font>
                   </a>
-                  <p>
-                    <small className="text-white">No Credit Card Required!</small>
-                  </p>
+                  <div onClick={handleOpenModal} className="row text-center ml-3 how_it_works" style={{cursor:'pointer',alignItems:'center',textDecoration:'none'}}    >
+                    <PlayCircleOutlineIcon
+                    
+                      style={{ width: "20px", height: "20px" ,color:"white",cursor:'pointer'}}
+                    />
+                    <p className="ml-1 text-white " style={{marginTop:'13px',cursor:'pointer'}}>How it works</p>
+                  </div>
+                  {/* <p>
+                    <small className="text-white">
+                      No Credit Card Required!
+                    </small>
+                  </p> */}
                 </div>
               </div>
             </Grid>
@@ -166,16 +201,13 @@ export default () => {
               <img
                 src={Banner2Sm}
                 alt=""
-                style={{width:'100%'}}
+                style={{ width: "100%" }}
                 className="img-fluid mx-auto"
               />
             </Grid>
           </Grid>
         </div>
-        <div
-          className="carousel-item third rounded"
-
-        >
+        <div className="carousel-item third rounded">
           <Grid
             container
             direction="row"
@@ -207,7 +239,7 @@ export default () => {
                     experience.
                   </font>
                 </div>
-                <div style={{ textAlign: "center" }}>
+                <div className="row" style={{alignItems:'center'}}>
                   <a
                     rel="noopener noreferrer"
                     href="https://app.cxdeployer.com/#/"
@@ -217,9 +249,18 @@ export default () => {
                   >
                     <font color="white">Try for free</font>
                   </a>
-                  <p>
-                    <small className="text-white">No Credit Card Required!</small>
-                  </p>
+                  <div onClick={handleOpenModal} className="row text-center ml-3 how_it_works" style={{cursor:'pointer',alignItems:'center',textDecoration:'none'}}    >
+                    <PlayCircleOutlineIcon
+                    
+                      style={{ width: "20px", height: "20px" ,color:"white",cursor:'pointer'}}
+                    />
+                    <p className="ml-1 text-white " style={{marginTop:'13px',cursor:'pointer'}}>How it works</p>
+                  </div>
+                  {/* <p>
+                    <small className="text-white">
+                      No Credit Card Required!
+                    </small>
+                  </p> */}
                 </div>
               </div>
             </Grid>
@@ -232,18 +273,16 @@ export default () => {
               lg={8}
               className="d-none d-lg-block text-center"
             >
-              <img src={Banner3Sm} alt="" 
-                                style={{minWidth:'400px',width:'100%'}}
+              <img
+                src={Banner3Sm}
+                alt=""
+                style={{ minWidth: "400px", width: "100%" }}
                 className="img-fluid mx-auto"
-
               />
             </Grid>
           </Grid>
         </div>
-        <div
-          className="carousel-item fourth rounded"
-
-        >
+        <div className="carousel-item fourth rounded">
           <Grid
             container
             direction="row"
@@ -258,7 +297,6 @@ export default () => {
                 alt=""
                 style={{ width: "90%" }}
                 className="img-fluid mx-auto"
-
               />
             </Grid>
 
@@ -276,7 +314,7 @@ export default () => {
                     future state of the customer experience.
                   </font>
                 </div>
-                <div style={{ textAlign: "center" }}>
+                <div className="row" style={{alignItems:'center'}}>
                   <a
                     rel="noopener noreferrer"
                     href="https://app.cxdeployer.com/#/"
@@ -286,9 +324,18 @@ export default () => {
                   >
                     <font color="white">Try for free</font>
                   </a>
-                  <p>
-                    <small className="text-white">No Credit Card Required!</small>
-                  </p>
+                  <div onClick={handleOpenModal} className="row text-center ml-3 how_it_works" style={{cursor:'pointer',alignItems:'center',textDecoration:'none'}}    >
+                    <PlayCircleOutlineIcon
+                    
+                      style={{ width: "20px", height: "20px" ,color:"white",cursor:'pointer'}}
+                    />
+                    <p className="ml-1 text-white " style={{marginTop:'13px',cursor:'pointer'}}>How it works</p>
+                  </div>
+                  {/* <p>
+                    <small className="text-white">
+                      No Credit Card Required!
+                    </small>
+                  </p> */}
                 </div>
               </div>
             </Grid>
@@ -304,7 +351,7 @@ export default () => {
               <img
                 src={Banner4Sm}
                 alt=""
-                style={{minWidth:'400px',width:'100%'}}
+                style={{ minWidth: "400px", width: "100%" }}
                 className="img-fluid mx-auto"
               />
             </Grid>

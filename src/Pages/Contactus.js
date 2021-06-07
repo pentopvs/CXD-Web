@@ -6,14 +6,14 @@ import { AiFillWechat } from "react-icons/ai";
 import { FaHandshake } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import MetaTags from "react-meta-tags";
-
+import {Helmet} from 'react-helmet';
 import Logo from "../assets/Home/logo.png";
 
 export default () => {
   document.title = "Contact us | CXDeployer";
   return (
     <div>
-          <MetaTags>
+          <Helmet>
         <title>Contact us | CXDeployer</title>
             <meta name="title" content="Contact us | CXDeployer"/>
             <meta name="description" content="The best customer engagement and support"/>
@@ -30,9 +30,9 @@ export default () => {
             <meta property="twitter:title" content="Contact us | CXDeployer" />
             <meta property="twitter:description" content="The best customer engagement and support" />
             <meta property="twitter:image" content={`https://cxdeployer.com${Logo}`} />
-      </MetaTags>
+      </Helmet>
 
-      <div className=" mt-5 mb-5 text-center container">
+      <div className=" mt-5 mb-5 text-center container pt-5">
         <h1>Contact Us</h1>
       </div>
       <div className="container mt-5 mb-5">

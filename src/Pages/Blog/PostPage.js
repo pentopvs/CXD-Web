@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import axios from "axios";
-import { getBlogs } from "../../Api";
+import { getBlogs, urlHelperImage } from "../../Api";
 import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
 import RecommCard from "./recommblogs";
-import MetaTags from 'react-meta-tags';
-
+import MetaTags from "react-meta-tags";
+import MetaTagsServer from "react-meta-tags/server";
+import { MetaTagsContext } from "react-meta-tags";
+import {Helmet} from "react-helmet";
+import { useParams } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,11 +31,21 @@ function PostPage(props) {
   const [post, setPost] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [data, setdata] = useState([]);
+  const [inviBlogData, setInviBlogData] = useState([]);
   const [blogData, setBlogData] = useState([]);
   const [options, setOptions] = useState([]);
   const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
   const [recommpost, setRecommpost] = useState([]);
+  const { title } = useParams();
+  const fetchBlogsById = async () => {
+    let newTitle = title.split("-").join(" ");
+    let blogbyid = await axios.get(
+      `https://app.cxdeployer.com/api/admin/blog/get/blog/${newTitle}`
+    );
+    setInviBlogData(blogbyid.data.result);
+  };
+  console.log("BLOGDATA", inviBlogData);
 
   const fetchBlogs = () => {
     let tags = [];
@@ -62,7 +75,8 @@ function PostPage(props) {
   const recommRedirect = (id, title) => {
     var blog_title = title.split(" ").join("-");
     localStorage.setItem("blogId", id);
-    props.history.push("/blog/" + blog_title);
+    // props.history.push("/blog/" + blog_title);
+    props.history.push(`/blog/${blog_title}`);
     window.location.reload();
   };
 
@@ -82,37 +96,80 @@ function PostPage(props) {
   };
   useEffect(() => {
     fetchBlogs();
-
+    fetchBlogsById();
     // setPost(props.location.blog);
   }, []);
   var blogUrl = ''
   try{
-    blogUrl = post.title.split(" ").join("-")   
+    blogUrl = inviBlogData.title.split(" ").join("-")   
+    // blogUrl = post.title.split(" ").join("-")   
   }
   catch(err) {
     console.log("Error : ",err)
   }
   return (
     <div>
-      <div className="postPage" style={{ width: "80%", margin: "3rem auto" }}>
-      <MetaTags>
-        <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title>
-            <meta name="title" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"/>
-            <meta name="description" content={post.description}/>
-            {/* <!-- Open Graph / Facebook --> */}
-            <meta property="og:type" content="website"/>
-            <meta property="og:description" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
-            <meta property="og:title" content={post.description} />
-            <meta property="og:image" content={`https://app.cxdeployer.com/user/${post.titleImage}`} />
-            <meta property="og:url" content={`https://cxdeployer.com/blog/${blogUrl}`} />
+      <div className="postPage pt-5" style={{ width: "80%", margin: "3rem auto" }}>
+        <MetaTags>
+          {/* <title>Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer</title> */}
+          {/* <title>{post.title}</title> */}
+          <title>{inviBlogData.title}</title>
+          {/* <img src={`https://app.cxdeployer.com/user/${post.titleImage}`} alt=""/> */}
+          {/* <link rel="icon" type="image/png" sizes="32x32" href={`https://app.cxdeployer.com/user/${post.titleImage}`} /> */}
+          <meta
+            name="title"
+            // content={post.title}
+            content={inviBlogData.title}
+          />
+          {/* <meta property="og:image" content={`https://app.cxdeployer.com/user/${post.titleImage}`} /> */}
+          <meta
+            property="og:image"
+            content={`https://app.cxdeployer.com/user/${inviBlogData.titleImage}`}
+          />
+          {/* <meta
+            name="image"
+            content={`${urlHelperImage}/${post.titleImage}`}
+          /> */}
 
-            {/* <!-- Twitter -- /> */}
-            <meta property="twitter:card" content="Blog" />
-            <meta property="twitter:url" content={`https://cxdeployer.com/blog/${blogUrl}`} />
-            <meta property="twitter:title" content={post.description} />
-            <meta property="twitter:description" content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer" />
-            <meta property="twitter:image" content={`https://app.cxdeployer.com/user/${post.titleImage}`} />
-      </MetaTags>
+          {/* <meta name="description" content={post.description} /> */}
+          <meta name="description" content={inviBlogData.description} />
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:description"
+            content={inviBlogData.title}
+          />
+          {/* <meta property="og:title" content={post.description} /> */}
+          <meta property="og:title" content={inviBlogData.title} />
+          <meta
+            property="og:image"
+            // content={`https://app.cxdeployer.com/user/${post.titleImage}`}
+            content={`https://app.cxdeployer.com/user/${inviBlogData.titleImage}`}
+          />
+          <meta
+            property="og:url"
+            content={`https://cxdeployer.com/blog/${blogUrl}`}
+          />
+
+          {/* <!-- Twitter -- /> */}
+          <meta property="twitter:card" content="Blog" />
+          <meta
+            property="twitter:url"
+            content={`https://cxdeployer.com/blog/${blogUrl}`}
+          />
+          {/* <meta property="twitter:title" content={post.description} /> */}
+          <meta property="twitter:title" content={inviBlogData.description} />
+          <meta
+            property="twitter:description"
+            content="Blogs | Persona | Empathy | Value | Journey Mapping | Innovation | Kanban | CXDeployer"
+          />
+          <meta
+            property="twitter:image"
+            // content={`https://app.cxdeployer.com/user/${post.titleImage}`}
+            content={`https://app.cxdeployer.com/user/${inviBlogData.titleImage}`}
+          />
+        </MetaTags>
+
         <br />
         <div class="container">
           <div class="row ">
@@ -121,7 +178,10 @@ function PostPage(props) {
               <div
                 style={{ display: "flex", justifyContent: "flex-end" }}
               ></div>
-              <div dangerouslySetInnerHTML={{ __html: post.blog_content }} />
+              {/* <div dangerouslySetInnerHTML={{ __html: post.blog_content }} /> */}
+              <div
+                dangerouslySetInnerHTML={{ __html: inviBlogData.blog_content }}
+              />
             </div>
             <div class="col-sm-4 right-conatainer">
               <div class="sidebar">
@@ -172,8 +232,8 @@ function PostPage(props) {
 
                 <h4 className="mt-4">Tags :</h4>
                 <div className={classes.root}>
-                  {post.tags && post.tags.length != 0 ? (
-                    post.tags.map((tag) => {
+                  {inviBlogData.tags && inviBlogData.tags.length != 0 ? (
+                    inviBlogData.tags.map((tag) => {
                       return <Chip label={tag} />;
                     })
                   ) : (
@@ -181,6 +241,15 @@ function PostPage(props) {
                       <p class="mb-0">No related tags</p>
                     </blockquote>
                   )}
+                  {/* {post.tags && post.tags.length != 0 ? (
+                    post.tags.map((tag) => {
+                      return <Chip label={tag} />;
+                    })
+                  ) : (
+                    <blockquote class="blockquote mt-2 pl-2">
+                      <p class="mb-0">No related tags</p>
+                    </blockquote>
+                  )} */}
                 </div>
                 <h4 className="mt-4">Recommended Posts :</h4>
                 <div className="mt-2">
