@@ -2,12 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import TagManager from "react-gtm-module";
+// import TagManager from "react-gtm-module";
 
-const tagManagerArgs = {
-  gtmId: "UA-173923493-1",
-};
+//For creating static pages
+import { hydrate, render } from "react-dom";
 
-TagManager.initialize(tagManagerArgs);
+// const tagManagerArgs = {
+//   gtmId: "UA-173923493-1",
+// };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// TagManager.initialize(tagManagerArgs);
+
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+//Static pages
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}

@@ -1,41 +1,62 @@
 import React from "react";
-import FeatureImg1 from "../../../assets/Home/real-time-collaboration.png";
-import FeatureImg2 from "../../../assets/Home/Audit-log.png";
-import FeatureImg3 from "../../../assets/Home/connected-maps.png";
-import FeatureImg4 from "../../../assets/Home/Download in any format.png";
-import FeatureImg5 from "../../../assets/Home/Cloud-storage.png";
+import FeatureImg1 from "../../../assets/Home/real-time-collaboration.svg";
+import FeatureImg2 from "../../../assets/Home/Audit-log.svg";
+import FeatureImg3 from "../../../assets/Home/connected-maps.svg";
+import FeatureImg4 from "../../../assets/Home/Download in any format.svg";
+import FeatureImg5 from "../../../assets/Home/Cloud-storage.svg";
+import PillTabs from "../PillTabs";
 
-const PillTabs = ({ image, index, title, subtitle }) => {
-  return (
-    <div
-      className={`tab-pane fade show ${index === "1" && "active"}`}
-      id={`v-pills-tab-${index}`}
-      role="tabpanel"
-      aria-labelledby={`v-pills-${index}`}
-    >
-      <div className="d-flex flex-column col-lg-10 col-12 align-items-center text-center justify-content-center mx-auto p-0">
-        <div
-          className={`d-flex col-lg-10 col-12 col-md-12 features-container key-feature-image-container py-5 px-3 v-pills-bg-${index}`}
-        >
-          <img
-            alt=""
-            src={image}
-            className="overview-image key-feature-image px-4"
-          />
-        </div>
-        <p className="h2 my-3 font-weight-regular">{title}</p>
-        <p className="text-center">{subtitle}</p>
-      </div>
-    </div>
-  );
-};
+// const PillTabs = ({ image, index, title, subtitle }) => {
+//   return (
+//     <div
+//       className={`tab-pane fade show ${index === "1" && "active"}`}
+//       id={`v-pills-tab-${index}`}
+//       role="tabpanel"
+//       aria-labelledby={`v-pills-${index}`}
+//     >
+//       <div className="d-flex flex-column col-lg-10 col-12 align-items-center text-center justify-content-center mx-auto p-0">
+//         <div
+//           className={`d-flex col-lg-10 col-12 col-md-12 features-container key-feature-image-container py-5 px-3 v-pills-bg-${index}`}
+//         >
+//           <img
+//             alt=""
+//             src={image}
+//             className="overview-image key-feature-image px-4"
+//           />
+//         </div>
+//         <p className="h2 my-3 font-weight-regular">{title}</p>
+//         <p className="text-center">{subtitle}</p>
+//       </div>
+//     </div>
+//   );
+// };
 
-export default () => {
+export default function Features()  {
   return (
     <section className="Features">
       <div className="row">
         <div className="col-12 col-md-8">
           <div className="tab-content" id="v-pills-tabContent">
+            {/* <div
+              className={`tab-pane fade show ${index === "1" && "active"}`}
+              id={`v-pills-tab-${index}`}
+              role="tabpanel"
+              aria-labelledby={`v-pills-${index}`}
+            >
+              <div className="d-flex flex-column col-lg-10 col-12 align-items-center text-center justify-content-center mx-auto p-0">
+                <div
+                  className={`d-flex col-lg-10 col-12 col-md-12 features-container key-feature-image-container py-5 px-3 v-pills-bg-${index}`}
+                >
+                  <img
+                    alt=""
+                    src={image}
+                    className="overview-image key-feature-image px-4"
+                  />
+                </div>
+                <p className="h2 my-3 font-weight-regular">{title}</p>
+                <p className="text-center">{subtitle}</p>
+              </div>
+            </div> */}
             <PillTabs
               index="1"
               image={FeatureImg1}

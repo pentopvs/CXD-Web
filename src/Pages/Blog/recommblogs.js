@@ -5,6 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
   root: {
@@ -28,6 +29,8 @@ export default function SimpleCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const [blog, setBlog] = useState([]);
+  const history = useHistory();
+  // var blog_title = blog.title.split(" ").join("-");
   useEffect(() => {
     console.log(props.blog);
     setBlog(props.blog);
@@ -53,6 +56,11 @@ export default function SimpleCard(props) {
         <Button
           size="small"
           onClick={() => props.redirect(blog._id, blog.title)}
+          // onClick={() =>
+           
+          //   history.push(`/blog/${blog.title.split(" ").join("-")}/${blog._id}`)
+          
+          // }
         >
           Learn More
         </Button>
@@ -60,3 +68,59 @@ export default function SimpleCard(props) {
     </Card>
   );
 }
+;
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             
+           
+           
+         
+               
+             

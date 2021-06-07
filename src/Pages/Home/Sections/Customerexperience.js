@@ -4,10 +4,7 @@ export default () => {
   return (
     <div className="mb-4">
       <div
-        className="container text-center py-5 bg-light shadow-lg"
-        
-      >
-        <h2>The best customer experience management solution.</h2>
+        className="container text-center py-5 bg-light shadow-lg">
         <p>You are just minutes away from CXDeployer.</p>
         <a
           className="btn btn-outline-first "

@@ -9,3 +9,6 @@ export const getBlogs=async()=>{
         return {success:false}        
     }
 }
+
+
+export const urlHelperImage = "https://app.cxdeployer.com/user";

@@ -35,11 +35,17 @@ export default function HomeBlogCard({ blog }) {
       xs={12}
       sm={5}
       lg={4}
-      className={`${classes.blogCard} mx-4 my-3 rounded-lg`}
-    >
+      cla ssName ={`${classes.blogCard} mx-4 my-3 rounded-lg`}
+    >     
+      {/* <MetaTags>
+      
+    ;
+      <title>{blog.title}</title>;
+   ;   </MetaTags> */}
       <Link
         to={{
           pathname: `/blog/${blog.title.split(" ").join("-")}`,
+          // pathname: `/blog/${blog.title}`,
           blog: blog,
         }}
         onClick={() => localStorage.setItem("blogId", blog._id)}
@@ -68,3 +74,4 @@ export default function HomeBlogCard({ blog }) {
     </Grid>
   );
 }
+;
