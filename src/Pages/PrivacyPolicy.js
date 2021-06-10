@@ -17,7 +17,7 @@ const PolicySection = (props) => (
 export default () => {
   document.title = "Privacy Policy | CXDeployer";
   return (
-    <div className="mt-5">
+    <div className="mt-5 pt-5">
       <h1 className="text-center">Privacy Policy </h1>
       <div className="row">
         <div className="col-12 col-md-10  m-auto">
