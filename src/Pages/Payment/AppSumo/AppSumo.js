@@ -82,7 +82,7 @@ export default class AppSumo extends Component {
   render() {
     let { fname, lname, terms, couponCode, email } = this.state;
     return (
-      <div className="pt-5">
+      <div className="pt-5 mt-5">
         <div className="container">
           <div className="container text-center" style={{ maxWidth: "800px" }}>
             <img className="mb-4" src={appsumo} style={{ height: "30px" }} />
