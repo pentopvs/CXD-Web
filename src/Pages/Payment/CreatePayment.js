@@ -45,6 +45,7 @@ export default class CreatePayment extends Component {
       });
   };
   handleChange = (e) => {
+    console.log(e.target.value)
     this.setState({ [e.target.name]: e.target.value });
   };
   makePayment = (token) => {
@@ -196,7 +197,7 @@ export default class CreatePayment extends Component {
     };
     return (
       <div className="pt-5">
-        <div className="container">
+        <div className="container" style={{marginTop: "70px"}}>
           <div className="container text-center" style={{ maxWidth: "800px" }}>
             <form>
               <div class="form-group d-flex">
